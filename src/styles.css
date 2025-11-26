@@ -146,6 +146,13 @@ layer(base);
   --color-tezblue: #3392E0;
 
   --color-theme-button:#3392E0;
+  --bg-grey: #F7F7F7;       /* Orange footer + section bg */
+--bg-cream: #FAF4EB;      /* Light cream section */
+--bg-mint: #F5FBF7;       /* Light mint section (very pale) */
+--border-light: #E5E7EB;  /* Divider lines */
+--text-dark: #111827;     /* Headings */
+--text-light: #6B7280;    /* Sub-text */
+
 
   --shadow-theme-md: 0px 4px 8px -2px rgba(16, 24, 40, 0.1),
     0px 2px 4px -2px rgba(16, 24, 40, 0.06);

@@ -5,7 +5,7 @@ import { RouterLink } from "@angular/router";
 
 @Component({
   selector: 'app-top-categories',
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule,RouterLink],
   templateUrl: './top-categories.component.html',
   styleUrl: './top-categories.component.css',
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
@@ -15,29 +15,24 @@ export class TopCategoriesComponent {
     {
       title: "Minor Injuries",
       subtitle: "15 mins",
-      image: "/images/patient.png"
+      image: "https://images.unsplash.com/photo-1604881991720-f91add269bed?auto=format&fit=crop&w=800&q=80",
+      description: "Quick treatment for cuts, bruises, sprains, and small wounds at home."
     },
     {
       title: "Minor Illness",
       subtitle: "15 mins",
-      image: "/images/sick.png"
+      image: "https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?auto=format&fit=crop&w=800&q=80",
+      description: "On-demand care for fever, cold, infections, headaches and mild symptoms."
     },
     {
       title: "Nursing Care",
       subtitle: "15 mins",
-      image: "/images/patient.png"
-    },
-    {
-      title: "Diagnostics",
-      subtitle: "15 mins",
-      image: "/images/sick.png"
-    },
-    {
-      title: "Minor Illness",
-      subtitle: "15 mins",
-      image: "/images/sick.png"
-    },
+      image: "https://images.unsplash.com/photo-1538108149393-fbbd81895907?auto=format&fit=crop&w=800&q=80",
+      description: "Professional nursing support for elders, recovery, injections, and vitals."
+    }
   ];
+  
+  
   
 
   ngAfterViewInit(): void {

@@ -6,10 +6,12 @@ import { PartnerSectionComponent } from '../partner-section/partner-section.comp
 import { TopNavComponent } from '../top-nav/top-nav.component';
 import { HealthcareSliderComponent } from '../healthcare-slider/healthcare-slider.component';
 import { FooterComponent } from '../footer/footer.component';
+import { ReviewsComponent } from '../reviews/reviews.component';
+import { FaqComponent } from "../faq/faq.component";
 
 @Component({
   selector: 'app-home',
-  imports: [TopCategoriesComponent, PopularServicesComponent, WhyTezhealthComponent , PartnerSectionComponent, HealthcareSliderComponent],
+  imports: [TopCategoriesComponent, PopularServicesComponent, WhyTezhealthComponent, HealthcareSliderComponent, ReviewsComponent, FaqComponent],
   templateUrl: './home.component.html',
 })
 export class HomeComponent {
