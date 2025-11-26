@@ -1,0 +1,51 @@
+<section class="relative w-full h-[85vh] overflow-hidden">
+
+    <swiper-container
+      class="hero-swiper w-full h-full"
+      slides-per-view="1"
+      loop="true"
+      navigation="true"
+      pagination="true"
+      effect="fade"
+      autoplay='{"delay":4000, "disableOnInteraction": false}'
+      fade-effect='{"crossFade": true}'
+    >
+  
+      <swiper-slide>
+        <div 
+          class="w-full h-full bg-cover bg-center"
+          style="background-image: url('/images/healthcare.jpg');"
+        ></div>
+      </swiper-slide>
+  
+      <swiper-slide>
+        <div 
+          class="w-full h-full bg-cover bg-center"
+          style="background-image: url('/images/home.jpg');"
+        ></div>
+      </swiper-slide>
+  
+    </swiper-container>
+  
+    <!-- Dark Overlay -->
+    <div class="absolute inset-0 bg-black/40 z-10"></div>
+  
+    <!-- Content -->
+    <div class="absolute inset-0 flex items-center justify-center text-center text-white z-20 px-6">
+      <div>
+        <h1 class="text-4xl md:text-6xl font-bold drop-shadow-xl">
+          Fast & Reliable <br> Home Health Tests
+        </h1>
+  
+        <p class="mt-4 text-lg md:text-xl">
+          Book medical tests from your home and get results quickly.
+        </p>
+  
+        <button class="mt-6 bg-white text-tezblue font-bold px-6 py-3 rounded-xl shadow hover:bg-gray-200 transition">
+          Search Tests →
+        </button>
+      </div>
+    </div>
+  
+  </section>
+  

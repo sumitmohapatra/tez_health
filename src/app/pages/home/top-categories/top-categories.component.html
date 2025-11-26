@@ -1,0 +1,50 @@
+<section class="bg-[#e7f8f4] py-12 mt-6">
+    <div class="max-w-7xl mx-auto px-4">
+  
+      <div class="flex justify-between items-center mb-8">
+        <h3 class="font-bold text-gray-900 text-xl">Top Categories</h3>
+  
+        <button class="border border-tezblue text-tezblue px-4 py-1.5 rounded-full text-sm hover:bg-tezblue hover:text-white transition">
+          View All →
+        </button>
+      </div>
+  
+      <div class="tez-slider relative">
+  
+        <div class="swiper categories-swiper">
+          <div class="swiper-wrapper">
+  
+            <div class="swiper-slide" *ngFor="let item of checkupCategories">
+              <div class="tez-card bg-white rounded-xl p-4 shadow-md border border-gray-200 hover:shadow-lg transition cursor-pointer"
+              routerLink="/service-categories">
+  
+                <div class="bg-gray-100 p-4 rounded-lg flex justify-center">
+                  <img [src]="item.image" class="h-28 object-contain" />
+                </div>
+  
+                <div class="mt-4">
+                  <h4 class="font-semibold text-gray-900 text-base">{{ item.title }}</h4>
+                  <p class="text-gray-500 text-sm">{{ item.subtitle }}</p>
+  
+                  <button class="mt-4 w-8 h-8 flex items-center justify-center rounded-full bg-tezblue text-white ml-auto">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                    </svg>
+                  </button>
+                </div>
+  
+              </div>
+            </div>
+  
+          </div>
+  
+          <div class="swiper-pagination"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+  
+        </div>
+      </div>
+  
+    </div>
+  </section>
+  

@@ -1,0 +1,55 @@
+<div class="max-w-7xl mx-auto px-4 py-10">
+
+    <!-- Search Bar -->
+    <div class="mb-10 flex justify-center">
+      <input 
+        type="text" 
+        placeholder="Search services..."
+        class="w-full md:w-1/2 border border-gray-300 rounded-xl px-5 py-3 text-sm 
+               shadow-sm focus:outline-none focus:ring-2 focus:ring-tezblue"
+      />
+    </div>
+  
+    <!-- Category Header -->
+    <h1 class="text-2xl font-bold text-gray-900 mb-6">Categories</h1>
+  
+    <!-- Service Cards Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+  
+      <!-- Service Card -->
+      <div 
+        *ngFor="let service of services" 
+        class="bg-white rounded-xl shadow-sm hover:shadow-md transition border border-gray-200 overflow-hidden">
+  
+        <img 
+          [src]="service.image" 
+          alt="{{ service.name }}"
+          class="w-full h-40 object-cover"
+        />
+  
+        <div class="p-4">
+          <h2 class="text-lg font-semibold text-gray-900">{{ service.name }}</h2>
+          <p class="text-sm text-gray-600 mt-1 h-10 overflow-hidden">{{ service.description }}</p>
+  
+          <div class="flex items-center space-x-3 mt-4">
+            <span class="text-lg font-bold text-gray-900">₹{{ service.price }}</span>
+            <span class="text-sm text-gray-400 line-through">₹750</span>
+            <span class="px-2 py-1 text-xs bg-green-100 text-green-700 rounded-md">
+              {{ service.discount }}
+            </span>
+          </div>
+  
+          <button 
+            class="mt-5 w-full bg-tezblue text-white text-sm font-medium py-2 rounded-lg hover:bg-tezblue-dark transition"
+            [routerLink]="'/product-details'">
+            Book Now
+          </button>
+        </div>
+  
+      </div>
+      <!-- End Service Card -->
+  
+    </div>
+  
+  </div>
+  
