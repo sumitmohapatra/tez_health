@@ -11,7 +11,7 @@ import { FaqComponent } from "../faq/faq.component";
 
 @Component({
   selector: 'app-home',
-  imports: [TopCategoriesComponent, PopularServicesComponent, WhyTezhealthComponent, HealthcareSliderComponent, ReviewsComponent, FaqComponent],
+  imports: [TopCategoriesComponent, PopularServicesComponent, WhyTezhealthComponent, HealthcareSliderComponent, ReviewsComponent, FaqComponent, PartnerSectionComponent],
   templateUrl: './home.component.html',
 })
 export class HomeComponent {
