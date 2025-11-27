@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import Swiper from 'swiper';
+declare const window: any;
 
 @Component({
   selector: 'app-healthcare-slider',
@@ -12,41 +12,30 @@ import Swiper from 'swiper';
 export class HealthcareSliderComponent {
   slides = [
     {
-      title: 'Healthcare @ Home',
-      subtitle: 'In Minutes',
-      image: '/images/healthcare_at_home.jpg'
+      title: 'tez.health',
+      subtitle: 'Quality healthcare at your doorstep — anytime.',
+      image: 'https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=1920&q=80',
+      button: 'Book Your Services'
     },
     {
-      title: 'Book a Doctor Visit',
-      subtitle: 'Anytime, Anywhere',
-      image: '/images/healthcare_at_home.jpg'
+      title: 'Home Care',
+      subtitle: 'Trained nurses for elderly & chronic care.',
+      image: '/images/doctor_visit.jpg',
+      button: 'Learn More'
     },
     {
-      title: 'Your Health, Our Priority',
-      subtitle: 'Trusted Care Providers',
-      image: '/images/healthcare_at_home.jpg'
+      title: 'Physiotherapy',
+      subtitle: 'Recover mobility with expert home physio.',
+      image: 'https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=1920&q=80',
+      button: 'Book Now'
     }
   ];
 
+
   ngAfterViewInit() {
-    new Swiper(".hero-swiper", {
-      loop: true,
-      effect: "fade",
-      fadeEffect: { crossFade: true },
-
-      autoplay: {
-        delay: 3000,       // Slide every 3 seconds
-        disableOnInteraction: false,  // Keep autoplay after manual click
-      },
-
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true
-      },
-
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev"
+    setTimeout(() => {
+      if (window.HSCarousel) {
+        window.HSCarousel.autoInit();
       }
     });
   }

@@ -29,6 +29,12 @@ export class TopCategoriesComponent {
       subtitle: "15 mins",
       image: "https://images.unsplash.com/photo-1538108149393-fbbd81895907?auto=format&fit=crop&w=800&q=80",
       description: "Professional nursing support for elders, recovery, injections, and vitals."
+    },
+    {
+      title: "Emergency First Aid",
+      subtitle: "15 mins",
+      image: "https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?auto=format&fit=crop&w=800&q=80",
+      description: "Immediate on-site first aid support for urgent, non-hospital emergencies."
     }
   ];
   

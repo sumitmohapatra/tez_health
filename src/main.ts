@@ -3,6 +3,13 @@ import { appConfig } from './app/app.config';
 import { AppComponent } from './app/app.component';
 import { register as registerSwiperElements } from 'swiper/element/bundle';
 
+declare global {
+  interface Window {
+    HSStaticMethods: any;
+  }
+}
+
+
 // Save original method
 // const originalAddEventListener = EventTarget.prototype.addEventListener;
 

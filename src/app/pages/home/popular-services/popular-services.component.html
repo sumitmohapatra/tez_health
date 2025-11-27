@@ -1,6 +1,6 @@
 <!-- Listings -->
 <div class="max-w-[85rem] px-4 sm:px-6 lg:px-8 py-8 lg:py-8 mx-auto">
-  <div class="max-w-2xl mx-auto text-center mb-10 lg:mb-14">
+  <div class="max-w-2xl mx-auto text-center mb-6 lg:mb-6">
     <h2 class="text-2xl font-bold md:text-4xl md:leading-tight dark:text-white">Popular Services</h2>
     <p class="mt-1 text-gray-600 dark:text-neutral-400">Whatever your status, our offers evolve according to your needs.
     </p>
@@ -28,11 +28,11 @@
     </a>
   </div>
   <!-- Card Grid -->
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
     <!-- Card -->
     <div class="group flex flex-col" *ngFor="let service of services">
       <div class="relative">
-        <div class="aspect-4/4 overflow-hidden rounded-2xl">
+        <div class="aspect-[4/3] overflow-hidden rounded-2xl">
           <img class="size-full object-cover rounded-2xl"
                [src]="service.image"
                alt="{{ service.title }}">

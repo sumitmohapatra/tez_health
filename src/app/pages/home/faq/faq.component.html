@@ -1,73 +1,129 @@
 <!-- FAQ -->
 <div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
-  <!-- Title -->
-  <div class="max-w-2xl mx-auto text-center mb-10 lg:mb-14">
-    <h2 class="text-2xl font-bold md:text-3xl md:leading-tight text-gray-800 dark:text-neutral-200">
-      Frequently Asked Questions
-    </h2>
-  </div>
-  <!-- End Title -->
-
-  <div class="max-w-5xl mx-auto">
-    <!-- Grid -->
-    <div class="grid sm:grid-cols-2 gap-6 md:gap-12">
-
-      <div>
-        <h3 class="text-lg font-semibold text-gray-800 dark:text-neutral-200">
-          How quickly can I book a home healthcare service?
-        </h3>
-        <p class="mt-2 text-gray-600 dark:text-neutral-400">
-          Most services can be scheduled within 15–30 minutes depending on your location and provider availability.
+  <!-- Grid -->
+  <div class="grid md:grid-cols-5 gap-10">
+    
+    <!-- Left Title -->
+    <div class="md:col-span-2">
+      <div class="max-w-xs">
+        <h2 class="text-2xl font-bold md:text-4xl md:leading-tight dark:text-white">
+          Frequently<br>asked questions
+        </h2>
+        <p class="mt-1 hidden md:block text-gray-600 dark:text-neutral-400">
+          Clear answers to the most common queries from our patients.
         </p>
       </div>
+    </div>
 
-      <div>
-        <h3 class="text-lg font-semibold text-gray-800 dark:text-neutral-200">
-          What types of conditions do you treat at home?
-        </h3>
-        <p class="mt-2 text-gray-600 dark:text-neutral-400">
-          We handle minor injuries, minor illnesses, injections, wound care, diagnostics, and general nursing care — all from your home.
-        </p>
-      </div>
+    <!-- FAQs -->
+    <div class="md:col-span-3">
 
-      <div>
-        <h3 class="text-lg font-semibold text-gray-800 dark:text-neutral-200">
-          Are your nurses and healthcare providers certified?
-        </h3>
-        <p class="mt-2 text-gray-600 dark:text-neutral-400">
-          Yes. Every professional is licensed, verified, background-checked, and trained for safe in-home medical care.
-        </p>
-      </div>
+      <div class="hs-accordion-group divide-y divide-gray-200 dark:divide-neutral-700">
 
-      <div>
-        <h3 class="text-lg font-semibold text-gray-800 dark:text-neutral-200">
-          Do I need a prescription for home nursing services?
-        </h3>
-        <p class="mt-2 text-gray-600 dark:text-neutral-400">
-          Not always. Many services such as vitals check, injections (with prescription), wound care, and IV therapies can be booked directly.
-        </p>
-      </div>
+        <!-- Item 1 -->
+        <div class="hs-accordion pb-3 active" id="faq-1">
+          <button class="hs-accordion-toggle group pb-3 inline-flex items-center justify-between gap-x-3 w-full md:text-lg font-semibold text-start text-gray-800 hover:text-gray-500 dark:text-neutral-200" aria-expanded="true" aria-controls="faq-1-content">
+            How do I book a healthcare service?
+            
+            <!-- Icon -->
+            <svg class="hs-accordion-active:hidden block size-5 text-gray-600" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m6 9 6 6 6-6"/>
+            </svg>
+            <svg class="hs-accordion-active:block hidden size-5 text-gray-600" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m18 15-6-6-6 6"/>
+            </svg>
+          </button>
 
-      <div>
-        <h3 class="text-lg font-semibold text-gray-800 dark:text-neutral-200">
-          Is there an additional charge for urgent visits?
-        </h3>
-        <p class="mt-2 text-gray-600 dark:text-neutral-400">
-          Urgent or priority visits may have an added fee, but all pricing is shown clearly before you confirm your booking.
-        </p>
-      </div>
+          <div id="faq-1-content" class="hs-accordion-content w-full overflow-hidden transition-[height] duration-300">
+            <p class="text-gray-600 dark:text-neutral-400">
+              You can book instantly using our website or app. Choose the service, pick your time, and our healthcare professional will arrive at your doorstep.
+            </p>
+          </div>
+        </div>
 
-      <div>
-        <h3 class="text-lg font-semibold text-gray-800 dark:text-neutral-200">
-          What if I need recurring or long-term care?
-        </h3>
-        <p class="mt-2 text-gray-600 dark:text-neutral-400">
-          We offer weekly and monthly care plans for elders, chronic care patients, post-surgery support, and long-term nursing needs.
-        </p>
+        <!-- Item 2 -->
+        <div class="hs-accordion pt-6 pb-3" id="faq-2">
+          <button class="hs-accordion-toggle group pb-3 inline-flex items-center justify-between gap-x-3 w-full md:text-lg font-semibold text-start text-gray-800 hover:text-gray-500 dark:text-neutral-200" aria-expanded="false" aria-controls="faq-2-content">
+            Are your nurses & physiotherapists certified?
+
+            <svg class="hs-accordion-active:hidden block size-5 text-gray-600" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m6 9 6 6 6-6"/>
+            </svg>
+            <svg class="hs-accordion-active:block hidden size-5 text-gray-600" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m18 15-6-6-6 6"/>
+            </svg>
+          </button>
+
+          <div id="faq-2-content" class="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300">
+            <p class="text-gray-600 dark:text-neutral-400">
+              Yes! All our healthcare professionals are verified, licensed, and experienced in home-based care.
+            </p>
+          </div>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="hs-accordion pt-6 pb-3" id="faq-3">
+          <button class="hs-accordion-toggle group pb-3 inline-flex items-center justify-between gap-x-3 w-full md:text-lg font-semibold text-start text-gray-800 hover:text-gray-500 dark:text-neutral-200" aria-expanded="false" aria-controls="faq-3-content">
+            What if I need to cancel or reschedule?
+
+            <svg class="hs-accordion-active:hidden block size-5 text-gray-600" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m6 9 6 6 6-6"/>
+            </svg>
+            <svg class="hs-accordion-active:block hidden size-5 text-gray-600" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m18 15-6-6-6 6"/>
+            </svg>
+          </button>
+
+          <div id="faq-3-content" class="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300">
+            <p class="text-gray-600 dark:text-neutral-400">
+              You can cancel or reschedule for free up to 2 hours before your appointment time.
+            </p>
+          </div>
+        </div>
+
+        <!-- Item 4 -->
+        <div class="hs-accordion pt-6 pb-3" id="faq-4">
+          <button class="hs-accordion-toggle group pb-3 inline-flex items-center justify-between gap-x-3 w-full md:text-lg font-semibold text-start text-gray-800 hover:text-gray-500 dark:text-neutral-200" aria-expanded="false" aria-controls="faq-4-content">
+            Do you provide emergency services?
+
+            <svg class="hs-accordion-active:hidden block size-5 text-gray-600" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m6 9 6 6 6-6"/>
+            </svg>
+            <svg class="hs-accordion-active:block hidden size-5 text-gray-600" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m18 15-6-6-6 6"/>
+            </svg>
+          </button>
+
+          <div id="faq-4-content" class="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300">
+            <p class="text-gray-600 dark:text-neutral-400">
+              We currently assist with minor injuries and urgent basic care. For life-threatening emergencies, please call your local emergency services immediately.
+            </p>
+          </div>
+        </div>
+
+        <!-- Item 5 -->
+        <div class="hs-accordion pt-6 pb-3" id="faq-5">
+          <button class="hs-accordion-toggle group pb-3 inline-flex items-center justify-between gap-x-3 w-full md:text-lg font-semibold text-start text-gray-800 hover:text-gray-500 dark:text-neutral-200" aria-expanded="false" aria-controls="faq-5-content">
+            Is my data secure?
+
+            <svg class="hs-accordion-active:hidden block size-5 text-gray-600" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m6 9 6 6 6-6"/>
+            </svg>
+            <svg class="hs-accordion-active:block hidden size-5 text-gray-600" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m18 15-6-6-6 6"/>
+            </svg>
+          </button>
+
+          <div id="faq-5-content" class="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300">
+            <p class="text-gray-600 dark:text-neutral-400">
+              Yes. All patient details and medical records are encrypted and handled according to healthcare privacy standards.
+            </p>
+          </div>
+        </div>
+
       </div>
 
     </div>
-    <!-- End Grid -->
   </div>
 </div>
 <!-- End FAQ -->
