@@ -1,0 +1,7 @@
+a {
+    transition: color 0.2s ease;
+  }
+  a.active {
+    color: #007BFF;
+  }
+  

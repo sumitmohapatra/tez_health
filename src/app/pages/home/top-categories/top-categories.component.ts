@@ -35,10 +35,22 @@ export class TopCategoriesComponent {
       subtitle: "15 mins",
       image: "https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?auto=format&fit=crop&w=800&q=80",
       description: "Immediate on-site first aid support for urgent, non-hospital emergencies."
+    },
+  
+    {
+      title: "Diagnostics",
+      subtitle: "15 mins",
+      image: "https://images.unsplash.com/photo-1604881991720-f91add269bed?auto=format&fit=crop&w=800&q=80",
+      description: "Basic health diagnostics including vitals check, blood pressure and sugar monitoring."
+    },
+  
+    {
+      title: "Elder Care",
+      subtitle: "15 mins",
+      image: "https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=800&q=80",
+      description: "Compassionate home assistance for seniors including mobility support and daily care."
     }
-  ];
-  
-  
+  ];  
   
 
   ngAfterViewInit(): void {

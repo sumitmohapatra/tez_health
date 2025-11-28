@@ -1,0 +1,37 @@
+<!-- Bottom Navigation (Mobile Only) -->
+<div class="fixed bottom-0 inset-x-0 bg-white border-t shadow-md md:hidden z-50">
+
+    <div class="flex justify-between px-6 py-2 text-xs font-medium text-gray-600">
+
+        <!-- HOME -->
+        <a routerLink="/home" routerLinkActive="text-tezblue"
+            class="flex flex-col items-center gap-1 cursor-pointer w-16 text-center"
+            [routerLinkActiveOptions]="{ exact: true }">
+            <img src="/images/home.png" class="w-6 h-6" />
+            <span>Home</span>
+        </a>
+
+        <!-- CATEGORIES -->
+        <a routerLink="/service-categories" routerLinkActive="text-tezblue"
+            class="flex flex-col items-center gap-1 cursor-pointer w-16 text-center">
+            <img src="/images/category.png" class="w-6 h-6" />
+            <span>Categories</span>
+        </a>
+
+        <!-- SURAKSHA -->
+        <a routerLink="/suraksha" routerLinkActive="text-tezblue"
+            class="flex flex-col items-center gap-1 cursor-pointer w-16 text-center">
+            <img src="/images/verified.png" class="w-6 h-6" />
+            <span>Suraksha</span>
+        </a>
+
+        <!-- STORE -->
+        <a routerLink="/store" routerLinkActive="text-tezblue"
+            class="flex flex-col items-center gap-1 cursor-pointer w-16 text-center">
+            <img src="/images/shop.png" class="w-6 h-6" />
+            <span>Store</span>
+        </a>
+
+    </div>
+
+</div>

@@ -1,5 +1,5 @@
 <!-- Slider -->
-<div class="px-4">
+<div class="px-4 relative z-10">
   <div data-hs-carousel='{"loadingClasses": "opacity-0"}' class="relative">
 
     <div class="hs-carousel relative overflow-hidden w-full h-45 md:h-[300px] bg-gray-100 rounded-2xl dark:bg-neutral-800">
@@ -10,13 +10,14 @@
             class="h-45 md:h-[300px] flex flex-col bg-cover bg-center" 
             [style.background-image]="'url(' + slide.image + ')'"
           >
-            <div class="mt-auto w-2/3 md:max-w-lg ps-5 pb-5">
+          <div class="mt-auto max-w-[75%] md:max-w-lg ps-10 pb-5">
+
               <span class="block text-white">{{ slide.title }}</span>
               <span class="block text-white text-xl md:text-3xl">{{ slide.subtitle }}</span>
       
               <div class="mt-5">
                 <a class="py-2 px-3 inline-flex items-center gap-x-2 
-                   text-sm font-medium rounded-xl bg-white text-black hover:bg-gray-100">
+                   text-sm font-medium rounded-xl bg-white text-black hover:bg-gray-100 cursor-pointer">
                   {{ slide.button }}
                 </a>
               </div>
