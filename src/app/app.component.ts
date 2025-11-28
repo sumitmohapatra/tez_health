@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { FooterComponent } from "./pages/home/footer/footer.component";
 import { TopNavComponent } from './pages/home/top-nav/top-nav.component';
 import { BottomNavComponent } from "./pages/home/bottom-nav/bottom-nav.component";
+import { ScheduleCallbackComponent } from "./pages/product/schedule-callback/schedule-callback.component";
 
 @Component({
   selector: 'app-root',

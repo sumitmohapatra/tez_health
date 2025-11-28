@@ -1,11 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import Swiper from 'swiper';
-import { RouterLink } from "@angular/router";
+import { RouterModule } from "@angular/router";
 
 @Component({
   selector: 'app-top-categories',
-  imports: [CommonModule,RouterLink],
+  imports: [CommonModule,RouterModule],
   templateUrl: './top-categories.component.html',
   styleUrl: './top-categories.component.css',
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

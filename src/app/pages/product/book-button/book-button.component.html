@@ -1,18 +1,19 @@
 <!-- Desktop and tablet: inside card, centered, smaller width -->
 <div class="hidden md:flex justify-center mt-6 mb-6">
-    <button
-      class="w-1/2 bg-theme-button text-white text-center py-3 font-semibold rounded-lg shadow-md hover:bg-theme-button transition"
-    >
-      Book Now!
-    </button>
-  </div>
-  
-  <!-- Mobile: fixed full-width bottom button -->
-<div
-class="md:hidden fixed bottom-14 left-0 w-full bg-theme-button text-white 
-       text-center py-3 font-semibold shadow-lg z-50"
->
-Book Now!
+  <button
+    class="w-1/2 uppercase bg-theme-button text-white text-center py-3 font-semibold rounded-lg shadow-md hover:bg-theme-button transition"
+    (click)="openModal()">
+    Book Now !
+  </button>
 </div>
 
-  
+<!-- Mobile: fixed full-width bottom button -->
+<div class="md:hidden fixed uppercase bottom-14 left-0 w-full cursor-pointer bg-theme-button text-white 
+       text-center py-3 font-semibold shadow-lg z-50" (click)="openModal()">
+  Book Now !
+</div>
+
+<app-modal [isOpen]="isOpen" (close)="closeModal()"
+  className="relative w-full max-w-[500px] mx-2 sm:mx-0 rounded-2xl bg-white dark:bg-gray-900">
+  <app-schedule-callback></app-schedule-callback>
+</app-modal>
