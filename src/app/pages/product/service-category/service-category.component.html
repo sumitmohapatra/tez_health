@@ -1,36 +1,29 @@
-<div class="max-w-7xl mx-auto px-4 py-6 lg:py-8">
+<div class="max-w-7xl mx-auto px-4 py-4 lg:py-8">
 
-    <!-- Search Bar -->
-    <div class="mb-6 flex justify-center">
-      <input 
-        type="text" 
-        placeholder="Search services..."
-        class="w-full md:w-1/2 border border-gray-300 rounded-xl px-5 py-3 text-sm 
-               shadow-sm focus:outline-none focus:ring-2 focus:ring-tezblue"
-      />
-    </div>
-  
-    <!-- Category Header -->
-    <h1 class="text-2xl font-bold text-gray-900 mb-6">Categories</h1>
-  
-    <!-- Service Cards Grid -->
+  <!-- Search Bar -->
+  <div class="mb-4 lg:mb-6 flex justify-center">
+    <input type="text" placeholder="Search products..." class="w-full md:w-1/2 border border-gray-300 rounded-xl px-5 py-3 text-sm 
+               shadow-sm focus:outline-none focus:ring-2 focus:ring-tezblue" />
+  </div>
+
+  <div class="mx-auto mb-2 lg:mb-4">
+    <h1 class="text-xl font-bold md:text-xl md:leading-tight dark:text-white">Products</h1>
+  </div>
+
+  <!-- Service Cards Grid -->
+  <!-- WEB VIEW -->
+  <div class="hidden md:block">
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-  
-      <!-- Service Card -->
-      <div 
-        *ngFor="let service of services" 
+
+      <div *ngFor="let service of services"
         class="bg-white rounded-xl shadow-sm hover:shadow-md transition border border-gray-200 overflow-hidden">
-  
-        <img 
-          [src]="service.image" 
-          alt="{{ service.name }}"
-          class="w-full h-40 object-cover"
-        />
-  
+
+        <img [src]="service.image" alt="{{ service.name }}" class="w-full h-40 object-cover" />
+
         <div class="p-4">
           <h2 class="text-lg font-semibold text-gray-900">{{ service.name }}</h2>
           <p class="text-sm text-gray-600 mt-1 h-10 overflow-hidden">{{ service.description }}</p>
-  
+
           <div class="flex items-center space-x-3 mt-4">
             <span class="text-lg font-bold text-gray-900">₹{{ service.price }}</span>
             <span class="text-sm text-gray-400 line-through">₹750</span>
@@ -38,18 +31,65 @@
               {{ service.discount }}
             </span>
           </div>
-  
-          <button 
+
+          <button
             class="mt-5 w-full bg-tezblue text-white text-md uppercase font-medium py-2 rounded-lg hover:bg-tezblue-dark transition"
             [routerLink]="'/product-details'">
             Book Now
           </button>
         </div>
-  
+
       </div>
-      <!-- End Service Card -->
-  
+
     </div>
-  
   </div>
-  
+
+  <!-- MOBILE VIEW -->
+  <div class="md:hidden space-y-5">
+
+    <div *ngFor="let service of services" class="bg-white rounded-xl border border-tezblue/20 shadow-sm p-4">
+
+      <!-- ROW 1: TEXT + IMAGE -->
+      <div class="flex items-start gap-3">
+
+        <!-- LEFT TEXT -->
+        <div class="flex-1">
+          <h2 class="text-base font-semibold text-gray-900">{{ service.name }}</h2>
+
+          <p class="text-sm text-gray-600 mt-1">
+            {{ service.description }}
+          </p>
+        </div>
+
+        <!-- RIGHT IMAGE -->
+        <img [src]="service.image" class="w-20 h-20 object-cover rounded-md flex-shrink-0" />
+
+      </div>
+
+      <!-- ROW 2: FULL-WIDTH PRICE + BUTTON -->
+      <div class="flex items-center mt-2 w-full">
+
+        <!-- PRICE SECTION -->
+        <div class="flex items-center space-x-2">
+          <span class="text-lg font-bold text-gray-900 leading-none">₹{{ service.price }}</span>
+          <span class="text-xs text-gray-400 line-through leading-none">₹750</span>
+          <span class="px-2 py-1 text-xs bg-green-100 text-green-700 rounded-md leading-none">
+            {{ service.discount }}
+          </span>
+        </div>
+
+        <!-- BUTTON RIGHT-ALIGNED -->
+        <button class="ml-auto bg-tezblue text-white text-xs font-semibold py-2 px-3 rounded-md whitespace-nowrap"
+          [routerLink]="'/product-details'">
+          BOOK NOW
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+</div>

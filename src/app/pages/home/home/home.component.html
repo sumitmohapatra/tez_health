@@ -1,5 +1,9 @@
+<div class="md:hidden px-4 pb-3">
+    <input type="text" placeholder="Search health tests..." class="w-full md:w-1/2 border border-gray-300 rounded-xl px-5 py-3 text-sm 
+               shadow-sm focus:outline-none focus:ring-2 focus:ring-tezblue" />
+</div>
 <app-healthcare-slider></app-healthcare-slider>
-<app-top-categories></app-top-categories>
+<app-top-categories [limit]="6"></app-top-categories>
 <app-popular-services></app-popular-services>
 <app-why-tezhealth></app-why-tezhealth>
 <app-partner-section></app-partner-section>

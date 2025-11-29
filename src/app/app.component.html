@@ -1,4 +1,8 @@
-<app-top-nav></app-top-nav>
-<router-outlet></router-outlet>
-<app-bottom-nav></app-bottom-nav>
-<app-footer></app-footer>
+<app-loader *ngIf="isLoading"></app-loader>
+
+<div *ngIf="!isLoading" class="body">
+    <app-top-nav></app-top-nav>
+    <router-outlet></router-outlet>
+    <app-bottom-nav></app-bottom-nav>
+    <app-footer></app-footer>
+</div>

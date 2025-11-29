@@ -1,12 +1,16 @@
 <!-- Card Blog -->
-<div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-4 lg:py-4 mx-auto">
+<div class="max-w-[85rem] px-4 py-2 sm:px-6 lg:px-4 lg:py-4 mx-auto">
   <!-- Title -->
+  <div class="mb-4 lg:mb-6 flex justify-center" *ngIf="!limit">
+    <input type="text" placeholder="Search categories..." class="w-full md:w-1/2 border border-gray-300 rounded-xl px-5 py-3 text-sm 
+               shadow-sm focus:outline-none focus:ring-2 focus:ring-tezblue" />
+  </div>
   <div class=" mx-auto text-center flex justify-between mb-4 lg:mb-4 align-items-center">
     <h2 class="text-xl font-bold md:text-xl md:leading-tight dark:text-white">Top Categories</h2>
-    <div>
-      <a routerLink="/service-categories" class="inline-flex items-center cursor-pointer
-        gap-x-1 text-lg font-semibold text-blue-600 dark:text-blue-500 
-               hover:underline hover:text-blue-700 dark:hover:text-blue-400 transition">
+    <div *ngIf="limit">
+      <a routerLink="/categories" class="inline-flex items-center cursor-pointer
+        gap-x-1 text-lg font-semibold text-tezblue dark:text-tezblue
+               hover:underline hover:text-tezblue dark:hover:text-tezblue transition">
         View All
         <svg class="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
           stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -23,39 +27,37 @@
   <!-- End Title -->
 
   <!-- Grid -->
- <!-- Grid -->
-<div class="grid grid-cols-3 lg:grid-cols-6 gap-4">
-  <!-- Card -->
-  <a class="group flex flex-col focus:outline-hidden" *ngFor="let category of checkupCategories">
+  <!-- Grid -->
+  <div class="grid grid-cols-3 lg:grid-cols-6 gap-4">
+    <!-- Card -->
+    <a class="group flex flex-col focus:outline-hidden" *ngFor="let category of displayedCategories">
 
-    <!-- IMAGE (reduced height) -->
-    <div class="relative pt-[70%] rounded-xl overflow-hidden cursor-pointer" routerLink="/service-categories">
-      <img class="size-full absolute top-0 start-0 object-cover rounded-xl 
+      <!-- IMAGE (reduced height) -->
+      <div class="relative pt-[70%] rounded-xl overflow-hidden cursor-pointer" routerLink="/service-categories">
+        <img class="size-full absolute top-0 start-0 object-cover rounded-xl 
                  group-hover:scale-105 group-focus:scale-105 
-                 transition-transform duration-500 ease-in-out"
-           [src]="category.image"
-           alt="{{ category.title }}">
-    </div>
+                 transition-transform duration-500 ease-in-out" [src]="category.image" alt="{{ category.title }}">
+      </div>
 
-    <!-- CONTENT -->
-    <div class="mt-3 text-center">
+      <!-- CONTENT -->
+      <div class="mt-3 text-center">
 
-      <!-- Title -->
-      <h3 class="text-md font-bold text-gray-800 
+        <!-- Title -->
+        <h3 class="text-md font-bold text-gray-800 
           group-hover:text-gray-600 
           dark:text-neutral-300 dark:group-hover:text-white">
-        {{category.title}}
-      </h3>
+          {{category.title}}
+        </h3>
 
-      <!-- Subtitle (time) -->
-      <p class="text-sm mt-1 flex items-center justify-center gap-1 text-gray-600 font-medium dark:text-neutral-300">
-        <span>⚡</span> {{category.subtitle}}
-      </p>
+        <!-- Subtitle (time) -->
+        <p class="text-sm mt-1 flex items-center justify-center gap-1 text-gray-600 font-medium dark:text-neutral-300">
+          <span>⚡</span> {{category.subtitle}}
+        </p>
 
-    </div>
-  </a>
-</div>
-<!-- End Grid -->
+      </div>
+    </a>
+  </div>
+  <!-- End Grid -->
 
   <!-- End Grid -->
 </div>

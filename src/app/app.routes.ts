@@ -26,6 +26,7 @@ import { PartnerComponent } from './pages/home/partner/partner.component';
 import { ContactUsComponent } from './pages/home/contact-us/contact-us.component';
 import { PrivacyPolicyComponent } from './pages/home/privacy-policy/privacy-policy.component';
 import { TermsComponent } from './pages/home/terms/terms.component';
+import { TopCategoriesComponent } from './pages/home/top-categories/top-categories.component';
 
 export const routes: Routes = [
   // {
@@ -48,24 +49,68 @@ export const routes: Routes = [
   },
   {
     path:'home',
-    component:HomeComponent,
+    loadComponent: () =>
+      import('./pages/home/home/home.component')
+        .then(c => c.HomeComponent),
     title:'Home | tez.health'
   },
   {
     path:'product-details',
-    component:ProductDetailsComponent,
+    loadComponent: () =>
+      import('./pages/product/product-details/product-details.component')
+        .then(c => c.ProductDetailsComponent),
     title:'Product Details | tez.health'
   },
   {
+    path:'categories',
+    loadComponent: () =>
+      import('./pages/home/top-categories/top-categories.component')
+        .then(c => c.TopCategoriesComponent),
+    title:'Top Categories | tez.health'
+  },
+  {
     path:'service-categories',
-    component:ServiceCategoryComponent,
+    loadComponent: () =>
+      import('./pages/product/service-category/service-category.component')
+        .then(c => c.ServiceCategoryComponent),
     title:'Service Categories | tez.health'
   },
-  { path: 'about-us', component: AboutUsComponent, title:'Home | tez.health' },
-  { path: 'partner', component: PartnerComponent, title:'Partner | tez.health' },
-  { path: 'contact', component: ContactUsComponent, title:'Contact | tez.health' },
-  { path: 'privacy-policy', component: PrivacyPolicyComponent, title:'Privacy Policy | tez.health' },
-  { path: 'terms', component: TermsComponent, title:'Terms | tez.health' },
+  { 
+    path: 'about-us',
+    loadComponent: () =>
+      import('./pages/home/about-us/about-us.component')
+        .then(c => c.AboutUsComponent), 
+    title:'Home | tez.health' },
+  { 
+    path: 'partner', 
+    loadComponent: () =>
+      import('./pages/home/partner/partner.component')
+        .then(c => c.PartnerComponent),
+    title:'Partner | tez.health' },
+  { 
+    path: 'contact', 
+    loadComponent: () =>
+      import('./pages/home/contact-us/contact-us.component')
+        .then(c => c.ContactUsComponent),
+    title:'Contact | tez.health' },
+  { 
+    path: 'privacy-policy', 
+    loadComponent: () =>
+      import('./pages/home/privacy-policy/privacy-policy.component')
+        .then(c => c.PrivacyPolicyComponent),
+    title:'Privacy Policy | tez.health' },
+  { 
+    path: 'terms', 
+    loadComponent: () =>
+      import('./pages/home/terms/terms.component')
+        .then(c => c.TermsComponent), 
+    title:'Terms | tez.health' },
+    { 
+      path: 'partner-with-us', 
+      loadComponent: () =>
+        import('./pages/home/partner-section/partner-section.component')
+          .then(c => c.PartnerSectionComponent), 
+      title:'Partner With Us | tez.health' },
   {
     path:'',
     redirectTo:'/home',
