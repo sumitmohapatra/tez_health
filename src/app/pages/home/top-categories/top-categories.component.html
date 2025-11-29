@@ -33,7 +33,7 @@
     <a class="group flex flex-col focus:outline-hidden" *ngFor="let category of displayedCategories">
 
       <!-- IMAGE (reduced height) -->
-      <div class="relative pt-[70%] rounded-xl overflow-hidden cursor-pointer" routerLink="/service-categories">
+      <div class="relative pt-[70%] rounded-xl overflow-hidden cursor-pointer" routerLink="/products">
         <img class="size-full absolute top-0 start-0 object-cover rounded-xl 
                  group-hover:scale-105 group-focus:scale-105 
                  transition-transform duration-500 ease-in-out" [src]="category.image" alt="{{ category.title }}">
