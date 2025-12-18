@@ -88,6 +88,18 @@ export const routes: Routes = [
         .then(c => c.PartnerComponent),
     title:'Partner | tez.health' },
   { 
+    path: 'join-us', 
+    loadComponent: () =>
+      import('./pages/home/join-us/join-us.component')
+        .then(c => c.JoinUsComponent),
+    title:'Partner | tez.health' },
+    { 
+    path: 'refund-cancellation-policy', 
+    loadComponent: () =>
+      import('./pages/home/refund-cancellation-policy/refund-cancellation-policy.component')
+        .then(c => c.RefundCancellationPolicyComponent),
+    title:'Partner | tez.health' },
+  { 
     path: 'contact', 
     loadComponent: () =>
       import('./pages/home/contact-us/contact-us.component')
