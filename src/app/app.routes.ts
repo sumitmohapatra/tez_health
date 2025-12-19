@@ -69,7 +69,7 @@ export const routes: Routes = [
     title:'Top Categories | tez.health'
   },
   {
-    path:'products',
+    path:'products/:categoryId',
     loadComponent: () =>
       import('./pages/product/service-category/service-category.component')
         .then(c => c.ServiceCategoryComponent),

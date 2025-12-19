@@ -45,10 +45,11 @@
     <a class="group flex flex-col focus:outline-hidden" *ngFor="let category of displayedCategories">
 
       <!-- IMAGE (reduced height) -->
-      <div class="relative pt-[70%] rounded-xl overflow-hidden cursor-pointer" routerLink="/products">
+      <div class="relative pt-[70%] rounded-xl overflow-hidden cursor-pointer"
+        [routerLink]="['/products', category.categoryId]">
         <img class="size-full absolute top-0 start-0 object-cover rounded-xl 
                  group-hover:scale-105 group-focus:scale-105 
-                 transition-transform duration-500 ease-in-out" [src]="category.image" alt="{{ category.title }}">
+                 transition-transform duration-500 ease-in-out" [src]="category.imageUrl" alt="{{ category.name }}">
       </div>
 
       <!-- CONTENT -->
@@ -58,12 +59,12 @@
         <h3 class="text-md font-bold text-gray-800 
           group-hover:text-gray-600 
           dark:text-neutral-300 dark:group-hover:text-white">
-          {{category.title}}
+          {{category.name}}
         </h3>
 
         <!-- Subtitle (time) -->
         <p class="text-sm mt-1 flex items-center justify-center gap-1 text-gray-600 font-medium dark:text-neutral-300">
-          <span>⚡</span> {{category.subtitle}}
+          <span>⚡</span> {{category.description}}
         </p>
 
       </div>
