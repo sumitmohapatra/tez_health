@@ -30,23 +30,34 @@
       <div *ngFor="let service of services"
         class="bg-white rounded-xl shadow-sm hover:shadow-md transition border border-gray-200 overflow-hidden">
 
-        <img [src]="service.image" alt="{{ service.name }}" class="w-full h-40 object-cover" />
+        <img [src]="service.imageUrl" alt="{{ service.name }}" class="w-full h-40 object-cover" />
 
         <div class="p-4">
           <h2 class="text-lg font-semibold text-gray-900">{{ service.name }}</h2>
           <p class="text-sm text-gray-600 mt-1 h-10 overflow-hidden">{{ service.description }}</p>
 
-          <div class="flex items-center space-x-3 mt-4">
-            <span class="text-lg font-bold text-gray-900">₹{{ service.price }}</span>
-            <span class="text-sm text-gray-400 line-through">₹750</span>
-            <span class="px-2 py-1 text-xs bg-green-100 text-green-700 rounded-md">
-              {{ service.discount }}
+          <div *ngIf="getFirstVariant(service) as variant" class="flex items-center space-x-3 mt-4">
+            <span class="text-lg font-bold text-gray-900">
+              ₹{{ variant.discountPrice }}
             </span>
+
+            <span class="text-sm text-gray-400 line-through">
+              ₹{{ variant.price }}
+            </span>
+
+            <span class="px-2 py-1 text-xs bg-green-100 text-green-700 rounded-md">
+              {{ getDiscountPercentage(service) }}% OFF
+            </span>
+          </div>
+
+          <!-- Fallback when no variants -->
+          <div *ngIf="!getFirstVariant(service)" class="mt-4 text-sm text-gray-500">
+            Price not available
           </div>
 
           <button
             class="mt-5 w-full bg-tezblue text-white text-md uppercase font-medium py-2 rounded-lg hover:bg-tezblue-dark transition"
-            [routerLink]="'/product-details'">
+            [routerLink]="['/product-details', service.productId]">
             Book Now
           </button>
         </div>
@@ -74,7 +85,7 @@
         </div>
 
         <!-- RIGHT IMAGE -->
-        <img [src]="service.image" class="w-20 h-20 object-cover rounded-md flex-shrink-0" />
+        <img [src]="service.imageUrl" class="w-20 h-20 object-cover rounded-md flex-shrink-0" />
 
       </div>
 
@@ -82,17 +93,29 @@
       <div class="flex items-center mt-2 w-full">
 
         <!-- PRICE SECTION -->
-        <div class="flex items-center space-x-2">
-          <span class="text-lg font-bold text-gray-900 leading-none">₹{{ service.price }}</span>
-          <span class="text-xs text-gray-400 line-through leading-none">₹750</span>
-          <span class="px-2 py-1 text-xs bg-green-100 text-green-700 rounded-md leading-none">
-            {{ service.discount }}
+        <div *ngIf="getFirstVariant(service) as variant" class="flex items-center space-x-3 mt-4">
+          <span class="text-lg font-bold text-gray-900">
+            ₹{{ variant.discountPrice }}
+          </span>
+
+          <span class="text-sm text-gray-400 line-through">
+            ₹{{ variant.price }}
+          </span>
+
+          <span class="px-2 py-1 text-xs bg-green-100 text-green-700 rounded-md">
+            {{ getDiscountPercentage(service) }}% OFF
           </span>
         </div>
 
+        <!-- Fallback when no variants -->
+        <div *ngIf="!getFirstVariant(service)" class="mt-4 text-sm text-gray-500">
+          Price not available
+        </div>
+
+
         <!-- BUTTON RIGHT-ALIGNED -->
         <button class="ml-auto bg-tezblue text-white text-xs font-semibold py-2 px-3 rounded-md whitespace-nowrap"
-          [routerLink]="'/product-details'">
+          [routerLink]="['/product-details', service.productId]">
           BOOK NOW
         </button>
 

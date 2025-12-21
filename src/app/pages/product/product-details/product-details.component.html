@@ -1,6 +1,6 @@
 <div class="mt-2 max-w-lg mx-auto bg-white shadow-lg rounded-xl overflow-hidden md:max-w-3xl">
-    <app-product-info></app-product-info>
-    <app-service-details></app-service-details>
+    <app-product-info [product]="product" [selectedVariant]="selectedVariant"></app-product-info>
+    <app-service-details [product]="product"></app-service-details>
     <app-book-button></app-book-button>
     <app-related-services></app-related-services>
 </div>

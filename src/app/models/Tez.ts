@@ -8,6 +8,7 @@ export interface Category {
 
 export interface ProductVariant {
   variantId: string;
+  productId:string;
   variantName: string;
   price: number;
   discountPrice: number;

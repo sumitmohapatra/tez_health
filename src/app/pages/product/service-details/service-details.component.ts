@@ -1,11 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Product } from '../../../models/Tez';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-service-details',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './service-details.component.html',
   styleUrl: './service-details.component.css'
 })
 export class ServiceDetailsComponent {
-
+  @Input() product!: Product;
 }

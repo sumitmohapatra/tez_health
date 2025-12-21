@@ -1,9 +1,23 @@
 @keyframes scooterMove {
-    0% { transform: translateX(-40px); }
-    100% { transform: translateX(250px); }
+  0% {
+    transform: translateX(-40px);
   }
-  
-  .scooter-svg {
-    animation: scooterMove 2.5s linear infinite;
+
+  100% {
+    transform: translateX(250px);
   }
-  
+}
+
+.scooter-svg {
+  animation: scooterMove 2.5s linear infinite;
+}
+
+:host {
+  position: fixed;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.6);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

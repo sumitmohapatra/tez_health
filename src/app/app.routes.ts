@@ -55,7 +55,7 @@ export const routes: Routes = [
     title:'Home | tez.health'
   },
   {
-    path:'product-details',
+    path:'product-details/:productId',
     loadComponent: () =>
       import('./pages/product/product-details/product-details.component')
         .then(c => c.ProductDetailsComponent),
