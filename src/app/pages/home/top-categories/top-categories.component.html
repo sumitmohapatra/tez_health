@@ -1,5 +1,5 @@
 <!-- Card Blog -->
-<div class="max-w-[85rem] px-4 py-2 sm:px-6 lg:px-4 lg:py-4 mx-auto">
+<div class="max-w-[85rem] px-4 py-2 sm:px-6 lg:px-4 mx-auto" [ngClass]="!limit ? 'sm:py-4' : ''">
   <!-- Title -->
   <div class="mb-4 lg:mb-6 flex justify-center" *ngIf="!limit">
     <div class="relative w-full md:w-1/2">
@@ -12,13 +12,14 @@
         </svg>
       </span>
 
-      <input type="text" placeholder="Search categories..." class="w-full border border-gray-300 rounded-xl py-3 px-5 pl-12 text-sm
-               shadow-sm focus:outline-none focus:ring-2 focus:ring-tezblue" />
+      <input type="text" placeholder="Search categories..." [(ngModel)]="searchText" class="w-full border border-gray-300 rounded-xl py-3 px-5 pl-12 text-sm
+         shadow-sm focus:outline-none focus:ring-2 focus:ring-tezblue" />
+
     </div>
   </div>
 
   <div class=" mx-auto text-center flex justify-between mb-4 lg:mb-4 align-items-center">
-    <h2 class="text-xl font-bold md:text-xl md:leading-tight dark:text-white">Top Categories</h2>
+    <h2 class="text-xl font-bold md:text-xl md:leading-tight dark:text-white">{{ limit ? 'Top Categories' : 'Service Categories' }}</h2>
     <div *ngIf="limit">
       <a routerLink="/categories" class="inline-flex items-center cursor-pointer
         gap-x-1 text-lg font-semibold text-tezblue dark:text-tezblue
@@ -40,20 +41,21 @@
 
   <!-- Grid -->
   <!-- Grid -->
-  <div class="grid grid-cols-3 lg:grid-cols-6 gap-4">
+  <div class="grid grid-cols-3 lg:grid-cols-5 gap-4">
     <!-- Card -->
-    <a class="group flex flex-col focus:outline-hidden" *ngFor="let category of displayedCategories">
+    <a class="group flex flex-col focus:outline-hidden"  *ngFor="let category of displayedCategories 
+           | filterByText: searchText : ['name', 'description']"
+      [routerLink]="['/products', category.categoryId]">
 
       <!-- IMAGE (reduced height) -->
-      <div class="relative pt-[70%] rounded-xl overflow-hidden cursor-pointer"
-        [routerLink]="['/products', category.categoryId]">
+      <div class="relative pt-[70%] rounded-xl overflow-hidden cursor-pointer">
         <img class="size-full absolute top-0 start-0 object-cover rounded-xl 
                  group-hover:scale-105 group-focus:scale-105 
                  transition-transform duration-500 ease-in-out" [src]="category.imageUrl" alt="{{ category.name }}">
       </div>
 
       <!-- CONTENT -->
-      <div class="mt-3 text-center">
+      <div class="mt-3 text-center cursor-pointer">
 
         <!-- Title -->
         <h3 class="text-md font-bold text-gray-800 

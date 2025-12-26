@@ -23,3 +23,8 @@ export interface Product {
   imageUrl:string;
   variants:ProductVariant[]
 }
+
+export interface SearchApiResponse{
+  name:string;
+  productId:string;
+}

@@ -1,20 +1,29 @@
 <!-- Slider -->
-<div class="max-w-[85rem] px-4 sm:px-6 lg:px-4 mx-auto relative z-10">
-  <div data-hs-carousel='{"loadingClasses": "opacity-0"}' class="relative">
+<div class="max-w-[85rem] py-0 sm:py-3
+ px-4 sm:px-6 lg:px-4 mx-auto relative z-10">
+  <div
+  data-hs-carousel='{
+    "loadingClasses": "opacity-0",
+    "isAutoPlay": true,
+    "autoPlayInterval": 4000,
+    "isInfiniteLoop": true
+  }'
+  class="relative">
 
-    <div class="hs-carousel relative overflow-hidden w-full h-50 md:h-[350px] bg-gray-100 rounded-2xl dark:bg-neutral-800">
-      <div class="hs-carousel-body absolute top-0 bottom-0 start-0 flex flex-nowrap transition-transform duration-700 opacity-0">
+
+    <div
+      class="hs-carousel relative overflow-hidden w-full h-50 md:h-[350px] bg-gray-100 rounded-2xl dark:bg-neutral-800">
+      <div
+        class="hs-carousel-body absolute top-0 bottom-0 start-0 flex flex-nowrap transition-transform duration-700 opacity-0">
 
         <div class="hs-carousel-slide" *ngFor="let slide of slides">
-          <div 
-            class="h-50 md:h-[350px] flex flex-col bg-cover bg-center" 
-            [style.background-image]="'url(' + slide.image + ')'"
-          >
-          <div class="mt-auto max-w-[75%] md:max-w-lg ps-10 pb-5">
+          <div class="h-50 md:h-[350px] flex flex-col bg-cover bg-center"
+            [style.background-image]="'url(' + slide.image + ')'">
+            <div class="mt-auto max-w-[75%] md:max-w-lg ps-10 pb-5">
 
               <span class="block text-white">{{ slide.title }}</span>
               <span class="block text-white text-xl md:text-3xl">{{ slide.subtitle }}</span>
-      
+
               <div class="mt-5">
                 <a class="py-2 px-3 inline-flex items-center gap-x-2 
                    text-sm font-medium rounded-xl bg-white text-black hover:bg-gray-100 cursor-pointer">
@@ -24,18 +33,24 @@
             </div>
           </div>
         </div>
-      
+
       </div>
-      
+
     </div>
 
     <!-- Arrows -->
-    <button type="button" class="hs-carousel-prev absolute inset-y-0 start-0 w-12 flex justify-center items-center text-white hover:bg-black/30 rounded-s-2xl">
-      <svg class="size-5" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor"><path d="M11 17L6 12L11 7"/></svg>
+    <button type="button"
+      class="hs-carousel-prev absolute inset-y-0 start-0 w-12 flex justify-center items-center text-white hover:bg-black/30 rounded-s-2xl">
+      <svg class="size-5" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor">
+        <path d="M11 17L6 12L11 7" />
+      </svg>
     </button>
 
-    <button type="button" class="hs-carousel-next absolute inset-y-0 end-0 w-12 flex justify-center items-center text-white hover:bg-black/30 rounded-e-2xl">
-      <svg class="size-5" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor"><path d="M6 7l5 5-5 5"/></svg>
+    <button type="button"
+      class="hs-carousel-next absolute inset-y-0 end-0 w-12 flex justify-center items-center text-white hover:bg-black/30 rounded-e-2xl">
+      <svg class="size-5" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor">
+        <path d="M6 7l5 5-5 5" />
+      </svg>
     </button>
 
   </div>

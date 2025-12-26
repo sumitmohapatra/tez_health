@@ -3,16 +3,19 @@ import { Component } from '@angular/core';
 import { ActivatedRoute, RouterModule } from "@angular/router";
 import { DataContextService } from '../../../services/data-context.service';
 import { Product } from '../../../models/Tez';
+import { FormsModule } from '@angular/forms';
+import { FilterByTextPipe } from "../../../pipe/filter-by-text.pipe";
 
 @Component({
   selector: 'app-service-category',
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, FormsModule, FilterByTextPipe],
   templateUrl: './service-category.component.html',
   styleUrl: './service-category.component.css'
 })
 export class ServiceCategoryComponent {
   services: Product[] = [];
   categoryId!: string;
+  searchText:string = '';
 
   constructor(
     private route: ActivatedRoute,

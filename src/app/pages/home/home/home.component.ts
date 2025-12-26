@@ -8,12 +8,15 @@ import { HealthcareSliderComponent } from '../healthcare-slider/healthcare-slide
 import { FooterComponent } from '../footer/footer.component';
 import { ReviewsComponent } from '../reviews/reviews.component';
 import { FaqComponent } from "../faq/faq.component";
+import { SearchBoxComponent } from "../search-box/search-box.component";
+import { Router } from '@angular/router';
+import { HowItWorksComponent } from "../how-it-works/how-it-works.component";
 
 @Component({
   selector: 'app-home',
-  imports: [TopCategoriesComponent, PopularServicesComponent, WhyTezhealthComponent, HealthcareSliderComponent, ReviewsComponent, FaqComponent, PartnerSectionComponent],
+  imports: [TopCategoriesComponent, PopularServicesComponent, WhyTezhealthComponent, HealthcareSliderComponent, ReviewsComponent, FaqComponent, PartnerSectionComponent, SearchBoxComponent, HowItWorksComponent],
   templateUrl: './home.component.html',
 })
 export class HomeComponent {
-
+  constructor(private router:Router){}
 }

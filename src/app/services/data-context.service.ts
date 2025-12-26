@@ -31,4 +31,8 @@ export class DataContextService {
     const params = new HttpParams().set('categoryid', categoryId);
     return this.http.get<any>(`${environment.baseUrl}tez/FetchProductsByCategory`, { params });
   }
+
+  searchProducts(keyword: string): Observable<any> {
+    return this.http.get<any>(`${environment.baseUrl}tez/SearchProducts?keywords=${keyword}`);
+  }
 }

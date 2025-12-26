@@ -1,4 +1,4 @@
-<div class="max-w-7xl mx-auto px-4 py-4 lg:py-8">
+<div class="max-w-7xl mx-auto px-4 py-4">
 
   <!-- Search Bar -->
   <div class="mb-4 lg:mb-6 flex justify-center">
@@ -12,7 +12,7 @@
         </svg>
       </span>
 
-      <input type="text" placeholder="Search products..." class="w-full border border-gray-300 rounded-xl py-3 px-5 pl-12 text-sm 
+      <input type="text" [(ngModel)]="searchText" placeholder="Search products..." class="w-full border border-gray-300 rounded-xl py-3 px-5 pl-12 text-sm 
                shadow-sm focus:outline-none focus:ring-2 focus:ring-tezblue" />
     </div>
   </div>
@@ -27,7 +27,7 @@
   <div class="hidden md:block">
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
-      <div *ngFor="let service of services"
+      <div *ngFor="let service of services | filterByText: searchText : ['name', 'description']"
         class="bg-white rounded-xl shadow-sm hover:shadow-md transition border border-gray-200 overflow-hidden">
 
         <img [src]="service.imageUrl" alt="{{ service.name }}" class="w-full h-40 object-cover" />
@@ -70,7 +70,7 @@
   <!-- MOBILE VIEW -->
   <div class="md:hidden space-y-5">
 
-    <div *ngFor="let service of services" class="bg-white rounded-xl border border-tezblue/20 shadow-sm p-4">
+    <div *ngFor="let service of services | filterByText: searchText : ['name', 'description']" class="bg-white rounded-xl border border-tezblue/20 shadow-sm p-4">
 
       <!-- ROW 1: TEXT + IMAGE -->
       <div class="flex items-start gap-3">
@@ -85,7 +85,7 @@
         </div>
 
         <!-- RIGHT IMAGE -->
-        <img [src]="service.imageUrl" class="w-20 h-20 object-cover rounded-md flex-shrink-0" />
+        <img [src]="service.imageUrl" class="w-24 h-20 object-cover rounded-md flex-shrink-0" />
 
       </div>
 

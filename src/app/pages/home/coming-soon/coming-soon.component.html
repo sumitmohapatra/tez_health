@@ -1,0 +1,38 @@
+<div class="relative flex flex-col justify-center min-h-screen overflow-hidden z-1">
+    <app-grid-shape />
+
+    <div class="mx-auto w-full max-w-[260px] text-center sm:max-w-[520px]">
+
+        <!-- Work In Progress Image -->
+        <img src="/images/work-in-progress.png" alt="Work in progress" class="mx-auto w-full max-w-[360px]" />
+
+        <!-- Description -->
+        <p class="mt-10 mb-6 text-base text-gray-700 dark:text-gray-400 sm:text-lg">
+            We’re working hard behind the scenes to bring you something amazing.
+            This page will be available very soon.
+        </p>
+
+        <!-- Back to Home Button -->
+        <a routerLink="/home" class="inline-flex items-center justify-center gap-2 rounded-lg
+             border border-gray-300 bg-white px-5 py-3.5
+             text-sm font-medium text-gray-700 shadow-theme-xs
+             hover:bg-gray-50 hover:text-gray-800
+             dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400
+             dark:hover:bg-white/[0.03] dark:hover:text-gray-200 cursor-pointer">
+            <!-- Home Icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 12l9-9 9 9" />
+                <path d="M4 10v10a1 1 0 001 1h5m4 0h5a1 1 0 001-1V10" />
+            </svg>
+            Back to Home Page
+        </a>
+    </div>
+
+    <!-- Footer -->
+    <p class="absolute flex items-center gap-1 text-sm text-center
+           text-gray-500 -translate-x-1/2 bottom-6 left-1/2
+           dark:text-gray-400">
+        © {{ currentYear }} – TezHealth Pvt Ltd.
+    </p>
+</div>

@@ -13,19 +13,19 @@ export class HealthcareSliderComponent {
   slides = [
     {
       title: 'tez.health',
-      subtitle: 'Quality healthcare at your doorstep — anytime.',
+      subtitle: 'Skilled nurse. Expert care @Home in minutes.',
       image: 'https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=1920&q=80',
       button: 'Book Your Services'
     },
     {
       title: 'Home Care',
-      subtitle: 'Trained nurses for elderly & chronic care.',
+      subtitle: 'Lab test @ Home, Fast and Hassle-free.',
       image: '/images/doctor_visit.jpg',
       button: 'Learn More'
     },
     {
       title: 'Physiotherapy',
-      subtitle: 'Recover mobility with expert home physio.',
+      subtitle: 'Skip the inconvenience, get IV infusion at home .',
       image: 'https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=1920&q=80',
       button: 'Book Now'
     }

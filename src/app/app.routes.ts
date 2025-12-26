@@ -112,6 +112,18 @@ export const routes: Routes = [
         .then(c => c.PrivacyPolicyComponent),
     title:'Privacy Policy | tez.health' },
   { 
+    path: 'store', 
+    loadComponent: () =>
+      import('./pages/store/store.component')
+        .then(c => c.StoreComponent),
+    title:'Store | tez.health' },
+  { 
+    path: 'tez-plus', 
+    loadComponent: () =>
+      import('./pages/tez-plus/tez-plus.component')
+        .then(c => c.TezPlusComponent),
+    title:'Tez plus | tez.health' },
+  { 
     path: 'terms', 
     loadComponent: () =>
       import('./pages/home/terms/terms.component')
@@ -123,6 +135,12 @@ export const routes: Routes = [
         import('./pages/home/partner-section/partner-section.component')
           .then(c => c.PartnerSectionComponent), 
       title:'Partner With Us | tez.health' },
+    { 
+      path: 'profile', 
+      loadComponent: () =>
+        import('./pages/profile/profile.component')
+          .then(c => c.ProfileComponent), 
+      title:'Profiles | tez.health' },
   {
     path:'',
     redirectTo:'/home',

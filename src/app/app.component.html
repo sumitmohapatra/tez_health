@@ -1,8 +1,14 @@
-<app-loader *ngIf="isLoading$ | async" class="loader-overlay"></app-loader>
+<app-loader *ngIf="showAppLoader"></app-loader>
 
-<div class="body">
+<app-api-loader *ngIf="isLoading$ | async" class="loader-overlay"></app-api-loader>
+
+<div class="app-layout">
   <app-top-nav></app-top-nav>
-  <router-outlet></router-outlet>
+
+  <main class="app-content">
+    <router-outlet></router-outlet>
+  </main>
+
   <app-bottom-nav></app-bottom-nav>
   <app-footer></app-footer>
 </div>

@@ -7,7 +7,8 @@ import { ScheduleCallbackComponent } from "./pages/product/schedule-callback/sch
 import { LoaderComponent } from "./pages/home/loader/loader.component";
 import { CommonModule } from '@angular/common';
 import { LoaderService } from './services/loader.service';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
+import { ApiLoaderComponent } from "./pages/home/api-loader/api-loader.component";
 
 @Component({
   selector: 'app-root',
@@ -18,8 +19,9 @@ import { Observable } from 'rxjs';
     TopNavComponent,
     BottomNavComponent,
     LoaderComponent,
-    CommonModule
-  ],
+    CommonModule,
+    ApiLoaderComponent
+],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
@@ -27,11 +29,15 @@ export class AppComponent {
   title = 'tez.health';
 
   isLoading$!: Observable<boolean>;
+  showAppLoader = true;
 
   constructor(private loaderService: LoaderService) {
   }
 
   ngOnInit() {
-    this.isLoading$ = this.loaderService.isLoading$;
+    this.isLoading$ = of(true);
+    setTimeout(() => {
+      this.showAppLoader = false;
+    },2000)
   }
 }

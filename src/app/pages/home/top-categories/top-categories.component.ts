@@ -4,10 +4,12 @@ import Swiper from 'swiper';
 import { RouterModule } from "@angular/router";
 import { Category } from '../../../models/Tez';
 import { DataContextService } from '../../../services/data-context.service';
+import { FormsModule } from '@angular/forms';
+import { FilterByTextPipe } from "../../../pipe/filter-by-text.pipe";
 
 @Component({
   selector: 'app-top-categories',
-  imports: [CommonModule,RouterModule],
+  imports: [CommonModule, RouterModule, FormsModule, FilterByTextPipe],
   templateUrl: './top-categories.component.html',
   styleUrl: './top-categories.component.css',
 })
@@ -17,6 +19,8 @@ export class TopCategoriesComponent {
   @Input() limit: number | null = null;
 
   constructor(private dataContext: DataContextService) {}
+
+  searchText = '';
 
   ngOnInit(): void {
     this.loadCategories();

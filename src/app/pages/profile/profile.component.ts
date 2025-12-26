@@ -4,16 +4,14 @@ import { PageBreadcrumbComponent } from '../../shared/components/common/page-bre
 import { UserMetaCardComponent } from '../../shared/components/user-profile/user-meta-card/user-meta-card.component';
 import { UserInfoCardComponent } from '../../shared/components/user-profile/user-info-card/user-info-card.component';
 import { UserAddressCardComponent } from '../../shared/components/user-profile/user-address-card/user-address-card.component';
+import { ComingSoonComponent } from "../home/coming-soon/coming-soon.component";
 
 @Component({
   selector: 'app-profile',
   imports: [
     CommonModule,
-    PageBreadcrumbComponent,
-    UserMetaCardComponent,
-    UserInfoCardComponent,
-    UserAddressCardComponent,
-  ],
+    ComingSoonComponent
+],
   templateUrl: './profile.component.html',
   styles: ``
 })
