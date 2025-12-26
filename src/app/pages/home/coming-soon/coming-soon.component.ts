@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { GridShapeComponent } from "../../../shared/components/common/grid-shape/grid-shape.component";
 import { RouterModule } from '@angular/router';
 
@@ -10,4 +10,5 @@ import { RouterModule } from '@angular/router';
 })
 export class ComingSoonComponent {
   currentYear: number = new Date().getFullYear();
+  @Input() text:string = 'We’re working hard behind the scenes to bring you something amazing.This page will be available very soon.';
 }
