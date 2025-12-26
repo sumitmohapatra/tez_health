@@ -7,7 +7,7 @@ import { ScheduleCallbackComponent } from "./pages/product/schedule-callback/sch
 import { LoaderComponent } from "./pages/home/loader/loader.component";
 import { CommonModule } from '@angular/common';
 import { LoaderService } from './services/loader.service';
-import { Observable, of } from 'rxjs';
+import { Observable } from 'rxjs';
 import { ApiLoaderComponent } from "./pages/home/api-loader/api-loader.component";
 
 @Component({
@@ -35,7 +35,7 @@ export class AppComponent {
   }
 
   ngOnInit() {
-    this.isLoading$ = of(true);
+    this.isLoading$ = this.loaderService.isLoading$;
     setTimeout(() => {
       this.showAppLoader = false;
     },2000)
