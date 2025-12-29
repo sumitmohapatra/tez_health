@@ -15,5 +15,5 @@
 
 <app-modal [isOpen]="isOpen" (close)="closeModal()"
   className="relative w-full max-w-[500px] mx-2 sm:mx-0 rounded-2xl bg-white dark:bg-gray-900">
-  <app-schedule-callback></app-schedule-callback>
+  <app-schedule-callback [product]="product"></app-schedule-callback>
 </app-modal>

@@ -1,4 +1,5 @@
-import { AfterViewInit, Component } from '@angular/core';
+import { AfterViewInit, Component, Input } from '@angular/core';
+import { Product } from '../../../models/Tez';
 
 @Component({
   selector: 'app-schedule-callback',
@@ -7,5 +8,5 @@ import { AfterViewInit, Component } from '@angular/core';
   styleUrl: './schedule-callback.component.css'
 })
 export class ScheduleCallbackComponent {
-
+ @Input() product!: Product;
 }
