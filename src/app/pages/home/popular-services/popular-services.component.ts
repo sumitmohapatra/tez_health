@@ -26,13 +26,13 @@ export class PopularServicesComponent implements AfterViewInit {
     { 
       title: 'Rabies vaccination',
       price: '₹ 499',
-      image: 'https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&w=800&q=80',
+      image: '/images/vaccination.png',
       description: 'Nursing support for elderly, chronic patients, and recovery care.'
     },
     { 
       title: 'Doctor consultation online',
       price: '₹ 699',
-      image: 'https://images.unsplash.com/photo-1550831107-1553da8c8464?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: '/images/doctor_consultation.png',
       description: 'Skilled post-op nursing and wound care at home for smooth recovery.'
     }
   ];
