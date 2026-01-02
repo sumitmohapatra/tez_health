@@ -16,6 +16,7 @@ import { DataContextService } from '../../../services/data-context.service';
 export class ProductDetailsComponent {
   product!: Product;
   selectedVariant!: ProductVariant;
+  products:Product[] = [];
 
   constructor(
     private route: ActivatedRoute,
@@ -23,9 +24,15 @@ export class ProductDetailsComponent {
   ) {}
 
   ngOnInit(): void {
-    const productId = this.route.snapshot.paramMap.get('productId')!;
+     this.route.paramMap.subscribe(params => {
+      const productId  = params.get('productId');
+      this.loadProduct(productId!);
+    });
+  }
 
-    this.dataContext.fetchProductsDetails().subscribe(res => {
+  loadProduct(productId: string) {
+     this.dataContext.fetchProductsDetails().subscribe(res => {
+      this.products = res?.data;
       this.product = res?.data.find((p:Product) => p.productId === productId)!;
 
       if (this.product?.variants?.length) {

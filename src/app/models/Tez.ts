@@ -21,6 +21,7 @@ export interface Product {
   categoryId:string;
   image: string;
   imageUrl:string;
+  longDescription:string;
   variants:ProductVariant[]
 }
 

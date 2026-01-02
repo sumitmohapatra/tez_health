@@ -1,7 +1,7 @@
 <div class="relative bg-white rounded-2xl overflow-hidden">
 
     <!-- Image -->
-    <div class="w-full h-48 sm:h-56 overflow-hidden rounded-t-2xl">
+    <div class="w-full h-48 sm:h-56 overflow-hidden rounded-t-2xl" *ngIf="product">
         <img [src]="product.imageUrl" alt="Doctor and patient" class="w-full h-full object-cover" />
     </div>
 
