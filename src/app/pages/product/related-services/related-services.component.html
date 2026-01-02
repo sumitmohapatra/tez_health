@@ -6,20 +6,12 @@
       *ngFor="let product of products" [routerLink]="['/product-details', product.productId]">
       <img [src]="product.imageUrl" class="w-full h-24 rounded-lg object-cover" />
       <p class="text-sm font-medium mt-2">{{product.name}}</p>
-      <div *ngIf="getFirstVariant(product) as variant" class="flex items-center space-x-3 mt-4">
+      <div *ngIf="getFirstVariant(product) as variant" class="flex items-center space-x-3 mt-2">
         <span class="text-lg font-bold text-gray-900">
           ₹{{ variant.discountPrice }}
         </span>
-
-        <span class="text-sm text-gray-400 line-through">
-          ₹{{ variant.price }}
-        </span>
-
-        <span class="px-2 py-1 text-xs bg-green-100 text-green-700 rounded-md">
-          {{ getDiscountPercentage(product) }}% OFF
-        </span>
       </div>
-      <div *ngIf="!getFirstVariant(product)" class="mt-4 text-sm text-gray-500">
+      <div *ngIf="!getFirstVariant(product)" class="mt-2 text-sm text-gray-500">
           Price not available
         </div>
     </div>
