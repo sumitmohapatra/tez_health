@@ -3,7 +3,7 @@
 
   <div class="grid grid-cols-2 gap-3 md:grid-cols-3">
     <div class="border rounded-xl p-2 shadow-sm hover:shadow-md transition cursor-pointer"
-      *ngFor="let product of products" [routerLink]="['/product-details', product.productId]">
+      *ngFor="let product of products" [routerLink]="['/product-details', product.productId, product.categoryId]">
       <img [src]="product.imageUrl" class="w-full h-24 rounded-lg object-cover" />
       <p class="text-sm font-medium mt-2">{{product.name}}</p>
       <div *ngIf="getFirstVariant(product) as variant" class="flex items-center space-x-3 mt-2">

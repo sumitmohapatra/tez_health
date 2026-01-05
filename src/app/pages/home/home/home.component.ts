@@ -11,6 +11,7 @@ import { FaqComponent } from "../faq/faq.component";
 import { SearchBoxComponent } from "../search-box/search-box.component";
 import { Router } from '@angular/router';
 import { HowItWorksComponent } from "../how-it-works/how-it-works.component";
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 
 @Component({
   selector: 'app-home',
@@ -18,5 +19,14 @@ import { HowItWorksComponent } from "../how-it-works/how-it-works.component";
   templateUrl: './home.component.html',
 })
 export class HomeComponent {
-  constructor(private router:Router){}
+
+constructor(private breakpointObserver: BreakpointObserver) {}
+
+limit = 5;
+
+ngOnInit() {
+  this.breakpointObserver.observe([Breakpoints.Handset]).subscribe(result => {
+    this.limit = result.matches ? 6 : 5;
+  });
+}
 }

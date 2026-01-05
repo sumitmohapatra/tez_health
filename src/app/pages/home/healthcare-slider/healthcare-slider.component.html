@@ -21,8 +21,11 @@
             [style.background-image]="'url(' + slide.image + ')'">
             <div class="mt-auto max-w-[75%] md:max-w-lg ps-10 pb-5">
 
-              <span class="block text-white">{{ slide.title }}</span>
-              <span class="block text-white text-xl md:text-3xl">{{ slide.subtitle }}</span>
+              <!-- <span class="block text-white">{{ slide.title }}</span> -->
+              <!-- <span class="block text-white text-xl md:text-3xl">{{ slide.subtitle }}</span> -->
+                <h1 class="text-xl md:text-3xl lg:text-4xl text-white">
+                        {{ slide.subtitle }}
+                    </h1>
 
               <div class="mt-5">
                 <a class="py-2 px-3 inline-flex items-center gap-x-2 

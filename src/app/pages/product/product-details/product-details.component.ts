@@ -26,13 +26,14 @@ export class ProductDetailsComponent {
   ngOnInit(): void {
      this.route.paramMap.subscribe(params => {
       const productId  = params.get('productId');
-      this.loadProduct(productId!);
+      const categoryId = params.get('categoryId');
+      this.loadProduct(productId!,categoryId!);
     });
   }
 
-  loadProduct(productId: string) {
-     this.dataContext.fetchProductsDetails().subscribe(res => {
-      this.products = res?.data;
+  loadProduct(productId: string,categoryId:string) {
+     this.dataContext.fetchProductsByCategory(categoryId).subscribe(res => {
+      this.products = res?.data.filter((p:Product) => p.productId !== productId);
       this.product = res?.data.find((p:Product) => p.productId === productId)!;
 
       if (this.product?.variants?.length) {

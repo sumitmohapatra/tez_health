@@ -1,0 +1,13 @@
+.nav-active {
+  background-color: #3b82f6; /* tezblue */
+  color: white;
+}
+
+.nav-active .nav-icon {
+  filter: invert(1);
+}
+
+/* Hover icon */
+.group:hover .nav-icon {
+  filter: invert(1);
+}

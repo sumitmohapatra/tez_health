@@ -17,14 +17,26 @@
 
     <!-- DESKTOP NAV -->
     <div class="hidden md:flex items-center gap-8 text-sm font-semibold text-gray-800">
-      <a routerLink="/tez-plus" routerLinkActive="text-tezblue" class="hover:text-tezblue">Tez plus</a>
+      <!-- <a routerLink="/tez-plus" routerLinkActive="text-tezblue" class="hover:text-tezblue">Tez plus</a>
       <a routerLink="/store" routerLinkActive="text-tezblue" class="hover:text-tezblue">Store</a>
-      <a routerLink="/profile" routerLinkActive="text-tezblue" class="hover:text-tezblue">Profile</a>
+      <a routerLink="/profile" routerLinkActive="text-tezblue" class="hover:text-tezblue">Profile</a> -->
 
-      <button
-        class="flex items-center gap-2 border border-tezblue text-tezblue px-4 py-1.5 rounded-full hover:bg-tezblue hover:text-white transition">
-        <i class="fa-brands fa-whatsapp"></i> Support
+      <button routerLink="/tez-plus" routerLinkActive="nav-active" class="group flex items-center gap-2 border border-tezblue 
+         px-4 py-1.5 rounded-full
+         hover:bg-tezblue hover:text-white transition">
+        <img src="/images/verified.png" class="w-4 h-4 nav-icon transition" />
+        Tez plus
       </button>
+
+      <button routerLink="/store" routerLinkActive="nav-active" class="group flex items-center gap-2 border border-tezblue
+         px-4 py-1.5 rounded-full
+         hover:bg-tezblue hover:text-white transition">
+        <img src="/images/shop.png" class="w-4 h-4 nav-icon transition" />
+        Store
+      </button>
+
+
+
     </div>
 
     <!-- MOBILE MENU BUTTON -->
@@ -74,11 +86,6 @@
     <a routerLink="/store" class="block border p-2 rounded-lg text-gray-800 font-medium 
                 hover:border-tezblue hover:text-tezblue transition">
       Store
-    </a>
-
-    <a routerLink="/profile" class="block border p-2 rounded-lg text-gray-800 font-medium 
-                hover:border-tezblue hover:text-tezblue transition">
-      Profile
     </a>
   </div>
 </div>

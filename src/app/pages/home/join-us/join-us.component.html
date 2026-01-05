@@ -16,6 +16,14 @@
                     <h1 class="text-xl md:text-3xl lg:text-5xl text-white">
                         Care Better. Earn Better. Live Better.
                     </h1>
+
+                    <button class="inline-flex mt-3 items-center justify-center
+               px-3 py-2 rounded-lg
+               bg-tezblue text-white font-semibold
+               hover:bg-tezblue/90 transition
+               focus:outline-none focus:ring-2 focus:ring-white/70" (click)="showApplyForm = true">
+                        Apply Now
+                    </button>
                 </div>
             </div>
         </div>
@@ -33,49 +41,87 @@
 
             <!-- Grid -->
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4
-           border border-gray-200 rounded-xl overflow-hidden
-           bg-gray-50">
+            border border-gray-200 rounded-xl overflow-hidden
+            bg-gray-50">
 
-                <!-- Card -->
+                <!-- Card 1 -->
                 <div class="group relative p-6 flex flex-col bg-white
-             border-b sm:border-b-0 sm:border-r border-gray-200
-             hover:bg-gray-100 transition">
+              border-b sm:border-b-0 sm:border-r border-gray-200
+              hover:bg-gray-100 transition">
 
-                    <h3 class="text-lg font-semibold text-gray-900 mb-3">
-                        Flexible Shifts, Your Convenience
-                    </h3>
+                    <!-- Top -->
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="flex items-center justify-center size-10 rounded-full
+               bg-tezblue/10 text-tezblue font-bold text-lg">
+                            1
+                        </div>
+                        <h3 class="text-md font-semibold text-gray-900">
+                            Flexible Shifts, Your Convenience
+                        </h3>
+                    </div>
+
                     <p class="text-gray-600 text-sm leading-relaxed">
                         Choose your working hours — morning, evening, weekends, or full-time.
                         Work when you want without compromising family time.
                     </p>
                 </div>
 
-                <div
-                    class="group relative p-6 flex flex-col bg-white border-b sm:border-b-0 sm:border-r border-gray-200 hover:bg-gray-100 transition">
-                    <h3 class="text-lg font-semibold text-gray-900 mb-3">
-                        Earn up to ₹50,000/month
-                    </h3>
+                <!-- Card 2 -->
+                <div class="group relative p-6 flex flex-col bg-white
+              border-b sm:border-b-0 sm:border-r border-gray-200
+              hover:bg-gray-100 transition">
+
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="flex items-center justify-center size-10 rounded-full
+               bg-tezblue/10 text-tezblue font-bold text-lg">
+                            2
+                        </div>
+                        <h3 class="text-md font-semibold text-gray-900">
+                            Earn up to ₹50,000/month
+                        </h3>
+                    </div>
+
                     <p class="text-gray-600 text-sm leading-relaxed">
                         Your skills deserve better rewards. High-value home-care services
                         help you earn more than traditional clinical jobs.
                     </p>
                 </div>
 
-                <div
-                    class="group relative p-6 flex flex-col bg-white border-b lg:border-b-0 sm:border-r border-gray-200 hover:bg-gray-100 transition">
-                    <h3 class="text-lg font-semibold text-gray-900 mb-3">
-                        Serve Your Own Community
-                    </h3>
+                <!-- Card 3 -->
+                <div class="group relative p-6 flex flex-col bg-white
+              border-b lg:border-b-0 sm:border-r border-gray-200
+              hover:bg-gray-100 transition">
+
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="flex items-center justify-center size-10 rounded-full
+               bg-tezblue/10 text-tezblue font-bold text-lg">
+                            3
+                        </div>
+                        <h3 class="text-md font-semibold text-gray-900">
+                            Serve Your Own Community
+                        </h3>
+                    </div>
+
                     <p class="text-gray-600 text-sm leading-relaxed">
                         Work close to home — no long commutes, no night shifts,
                         and no hospital politics.
                     </p>
                 </div>
 
-                <div class="group relative p-6 flex flex-col bg-white hover:bg-gray-100 transition">
-                    <h3 class="text-lg font-semibold text-gray-900 mb-3">
-                        Training, Support & Growth
-                    </h3>
+                <!-- Card 4 -->
+                <div class="group relative p-6 flex flex-col bg-white
+              hover:bg-gray-100 transition">
+
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="flex items-center justify-center size-10 rounded-full
+               bg-tezblue/10 text-tezblue font-bold text-lg">
+                            4
+                        </div>
+                        <h3 class="text-md font-semibold text-gray-900">
+                            Training, Support & Growth
+                        </h3>
+                    </div>
+
                     <p class="text-gray-600 text-sm leading-relaxed">
                         Get continuous skill upgrades, 24×7 team support,
                         and opportunities to grow into leadership roles.
@@ -83,6 +129,7 @@
                 </div>
 
             </div>
+
         </div>
 
 
@@ -152,11 +199,18 @@
 
             </div>
         </div>
-
-
         <!-- End Who Can Apply -->
 
-        <!-- End Who Can Apply -->
+        <div class="text-center">
+            <button class="inline-flex mt-3 items-center justify-center
+               px-3 py-2 rounded-lg
+               bg-tezblue text-white font-semibold
+               hover:bg-tezblue/90 transition
+               focus:outline-none focus:ring-2 focus:ring-white/70" (click)="showApplyForm = true">
+                Apply Now
+            </button>
+        </div>
+
 
 
         <!-- FAQs -->
@@ -379,3 +433,11 @@
     </div>
 </section>
 <!-- End Join Us Page -->
+
+
+<app-modal [isOpen]="showApplyForm" (close)="showApplyForm=false"
+    className="relative w-full max-w-[500px] mx-2 sm:mx-0 rounded-2xl bg-white">
+
+    <app-apply-now (formSubmitted)="showApplyForm=false"></app-apply-now>
+
+</app-modal>
