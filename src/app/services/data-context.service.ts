@@ -35,4 +35,9 @@ export class DataContextService {
   searchProducts(keyword: string): Observable<any> {
     return this.http.get<any>(`${environment.baseUrl}tez/SearchProducts?keywords=${keyword}`);
   }
+
+  fetchPopularProducts(){
+    return this.http.get<any>(`${environment.baseUrl}tez/FetchPopularProducts`);
+  }
+
 }

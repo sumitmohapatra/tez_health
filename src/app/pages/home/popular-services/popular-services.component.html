@@ -1,5 +1,5 @@
 <!-- Listings -->
-<div class="max-w-[85rem] px-4 sm:px-6 lg:px-8 py-4 lg:py-4 mx-auto">
+<div class="max-w-[85rem] px-4 sm:px-6 lg:px-4 py-4 lg:py-4 mx-auto">
 
   <div class=" mx-auto text-center flex justify-between mb-4 lg:mb-4 align-items-center">
     <h2 class="text-xl font-bold md:text-xl md:leading-tight dark:text-white">Popular Services</h2>
@@ -17,45 +17,50 @@
   </div>
 
   <!-- Card Grid -->
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3">
 
-    <div class="group flex flex-col lg:flex-col bg-white rounded-2xl border border-gray-200 p-3"
-         *ngFor="let service of services">
-  
+    <div class="group flex flex-col h-full bg-white rounded-2xl border border-gray-200 p-3 cursor-pointer"
+      *ngFor="let service of products" [routerLink]="['/product-details', service.productId, service.categoryId]">
+
       <!-- MOBILE HORIZONTAL LAYOUT -->
       <div class="flex gap-3 items-center lg:hidden">
         <div class="w-24 h-20 rounded-xl overflow-hidden">
-          <img [src]="service.image" alt="{{service.title}}" class="w-full h-full object-cover">
+          <img [src]="service.imageUrl" alt="{{service.name}}" class="w-full h-full object-cover">
         </div>
-  
+
         <div class="flex-1">
           <h3 class="text-lg font-semibold text-black dark:text-white">
-            {{service.title}}
+            {{service.name}}
           </h3>
-          <p class="text-md font-semibold text-gray-700 mt-1 dark:text-neutral-300">
-            {{service.price}}
+          <p *ngIf="getFirstVariant(service) as variant"
+            class="text-md font-semibold text-gray-700 mt-1 dark:text-neutral-300">
+            ₹{{variant.discountPrice}}
           </p>
+           <div *ngIf="!getFirstVariant(service)" class="mt-2 text-sm text-gray-500">
+            Price not available
+          </div>
         </div>
       </div>
-  
+
       <!-- WEB LAYOUT (Original Card) -->
-      <div class="hidden lg:block">
-        <div class="aspect-[4/3] overflow-hidden rounded-2xl">
-          <img class="w-full h-full object-cover rounded-2xl"
-               [src]="service.image"
-               alt="{{ service.title }}">
+      <div class="hidden lg:flex lg:flex-col h-full">
+        <div class="aspect-[4/3] overflow-hidden rounded-2xl" >
+          <img class="w-full h-full object-cover rounded-2xl" [src]="service.imageUrl" alt="{{ service.name }}">
         </div>
-  
+
         <div class="pt-4">
           <h3 class="font-medium md:text-lg text-black dark:text-white">
-            {{service.title}}
+            {{service.name}}
           </h3>
-  
-          <p class="mt-2 font-semibold text-black dark:text-white">
-            {{service.price}}
+
+          <p *ngIf="getFirstVariant(service) as variant" class="mt-2 font-semibold text-black dark:text-white">
+            ₹{{variant.discountPrice}}
           </p>
+          <div *ngIf="!getFirstVariant(service)" class="mt-2 text-sm text-gray-500">
+            Price not available
+          </div>
         </div>
-  
+
         <div class="mb-2 mt-4 text-sm">
           <div class="py-3 border-t border-gray-200 dark:border-neutral-700">
             <p class="text-sm text-gray-700 dark:text-neutral-300">
@@ -63,18 +68,20 @@
             </p>
           </div>
         </div>
-  
+
         <div class="mt-auto">
-          <a class="py-2 px-3 w-full inline-flex justify-center items-center gap-x-2 text-sm font-medium text-nowrap rounded-xl border border-transparent bg-tezblue text-white hover:bg-tezblue transition disabled:opacity-50">
+          <a
+            class="py-2 px-3 w-full inline-flex justify-center items-center gap-x-2 text-sm font-medium text-nowrap rounded-xl border border-transparent
+             bg-tezblue text-white hover:bg-tezblue transition disabled:opacity-50 cursor-pointer" [routerLink]="['/product-details', service.productId, service.categoryId]">
             Book now
           </a>
         </div>
       </div>
-  
+
     </div>
-  
+
   </div>
-  
+
   <!-- End Card Grid -->
 </div>
 <!-- End Listings -->
