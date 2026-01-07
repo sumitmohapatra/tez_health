@@ -1,15 +1,22 @@
 <div class="p-4 border-t" *ngIf="product">
-    <div class="mb-4">
-      <h3 class="font-semibold text-gray-900 mb-2">Service Details:</h3>
-      <p class="text-sm text-gray-600">
-        {{product.description}}
-      </p>
-    </div>
-  
-    <div>
-      <h3 class="font-semibold text-gray-900 mb-2">How It Works:</h3>
-      <div class="text-sm text-gray-600" [innerHTML]="product.longDescription">
-      </div>
-    </div>
+  <div class="mb-4">
+    <h3 class="font-semibold text-gray-900 mb-2">Service Details:</h3>
+    <p class="text-sm text-gray-600">
+      {{product.description}}
+    </p>
   </div>
-  
+
+  <div>
+    <h3 class="font-semibold text-gray-900 mb-2">How It Works:</h3>
+
+    <div #content class="text-sm text-gray-600 transition-all duration-300" [ngClass]="{
+        'max-h-[120px] overflow-hidden': !showMore
+      }" [innerHTML]="product.longDescription">
+    </div>
+
+    <!-- View More / Less -->
+    <button *ngIf="isLongContent" class="mt-2 text-sm text-tezblue font-medium hover:underline" (click)="toggleView()">
+      {{ showMore ? 'View Less' : 'View More' }}
+    </button>
+  </div>
+</div>
