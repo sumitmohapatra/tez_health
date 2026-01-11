@@ -14,19 +14,19 @@ export class HealthcareSliderComponent {
     {
       title: 'tez.health',
       subtitle: 'Skilled nurse. Expert care @Home in minutes.',
-      image: 'https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=1920&q=80',
+      image: '/images/banner-1.png',
       button: 'Book Your Services'
     },
     {
       title: 'Home Care',
       subtitle: 'Lab test @ Home, Fast and Hassle-free.',
-      image: '/images/doctor_visit.jpg',
+      image: '/images/banner-2.png',
       button: 'Learn More'
     },
     {
       title: 'Physiotherapy',
       subtitle: 'Skip the inconvenience, get IV infusion at home .',
-      image: 'https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=1920&q=80',
+      image: '/images/banner-3.png',
       button: 'Book Now'
     }
   ];

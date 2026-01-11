@@ -11,7 +11,7 @@
         <!-- Hero -->
         <div class="max-w-[85rem] mx-auto">
             <div
-                class="h-80 md:h-[60dvh] flex flex-col bg-[url('https://images.unsplash.com/photo-1670272505340-d906d8d77d03?q=80&w=1920&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-cover bg-center bg-no-repeat rounded-2xl">
+                class="h-80 md:h-[60dvh] flex flex-col bg-[url('/images/about-us-banner.png')] bg-cover bg-center bg-no-repeat rounded-2xl">
                 <div class="mt-auto w-2/3 md:max-w-lg ps-5 pb-5 md:ps-10 md:pb-10">
                     <h1 class="text-xl md:text-3xl lg:text-5xl text-white">
                         Care Better. Earn Better. Live Better.
@@ -129,22 +129,28 @@
                 <h2 class="text-2xl md:text-3xl font-semibold text-gray-900">
                     Who Can Apply?
                 </h2>
+                <p class="mt-2 text-gray-600 text-sm md:text-base">
+                    We are looking for qualified healthcare professionals passionate about home care
+                </p>
             </div>
 
-            <!-- Grid -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3
-           border border-gray-200 rounded-xl overflow-hidden
-           bg-gray-50">
+            <!-- Cards -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
 
                 <!-- Nurses -->
-                <div class="group relative p-6 bg-white
-             border-b sm:border-b-0 sm:border-r border-gray-200
-             hover:bg-gray-100 transition">
+                <div class="p-6 bg-white rounded-xl border border-gray-200
+                hover:shadow-md hover:border-gray-300 transition">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 flex items-center justify-center
+                    rounded-full bg-blue-50 text-blue-600 font-semibold">
+                            N
+                        </div>
+                        <h3 class="ml-3 text-lg font-semibold text-gray-900">
+                            Nurses
+                        </h3>
+                    </div>
 
-                    <h3 class="text-lg font-semibold text-gray-900 mb-3">
-                        Nurses
-                    </h3>
-                    <ul class="text-gray-600 space-y-2 text-sm">
+                    <ul class="text-gray-600 space-y-2 text-sm leading-relaxed">
                         <li>• Minimum 3–5 years of clinical experience</li>
                         <li>• ANM / GNM / BSc Nursing</li>
                         <li>• Confident in performing home procedures independently</li>
@@ -152,17 +158,24 @@
                 </div>
 
                 <!-- Doctors -->
-                <div class="group relative p-6 bg-white
-             border-b lg:border-b-0 sm:border-r border-gray-200
-             hover:bg-gray-100 transition">
+                <div class="p-6 bg-white rounded-xl border border-gray-200
+                hover:shadow-md hover:border-gray-300 transition">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 flex items-center justify-center
+                    rounded-full bg-green-50 text-green-600 font-semibold">
+                            D
+                        </div>
+                        <div class="ml-3">
+                            <h3 class="text-lg font-semibold text-gray-900">
+                                Doctors
+                            </h3>
+                            <p class="text-xs text-gray-500">
+                                General Physicians / Duty Doctors
+                            </p>
+                        </div>
+                    </div>
 
-                    <h3 class="text-lg font-semibold text-gray-900 mb-1">
-                        Doctors
-                    </h3>
-                    <p class="text-sm text-gray-500 mb-3">
-                        (General Physicians / Duty Doctors)
-                    </p>
-                    <ul class="text-gray-600 space-y-2 text-sm">
+                    <ul class="text-gray-600 space-y-2 text-sm leading-relaxed">
                         <li>• MBBS / MD / DNB</li>
                         <li>• Comfortable with home visit consultations</li>
                         <li>• Passionate about community healthcare</li>
@@ -170,12 +183,19 @@
                 </div>
 
                 <!-- Physiotherapists -->
-                <div class="group relative p-6 bg-white hover:bg-gray-100 transition">
+                <div class="p-6 bg-white rounded-xl border border-gray-200
+                hover:shadow-md hover:border-gray-300 transition">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 flex items-center justify-center
+                    rounded-full bg-purple-50 text-purple-600 font-semibold">
+                            P
+                        </div>
+                        <h3 class="ml-3 text-lg font-semibold text-gray-900">
+                            Physiotherapists
+                        </h3>
+                    </div>
 
-                    <h3 class="text-lg font-semibold text-gray-900 mb-3">
-                        Physiotherapists
-                    </h3>
-                    <ul class="text-gray-600 space-y-2 text-sm">
+                    <ul class="text-gray-600 space-y-2 text-sm leading-relaxed">
                         <li>• BPT / MPT</li>
                         <li>• Minimum 2 years hands-on therapy experience</li>
                         <li>• Ability to manage home therapy cases independently</li>
@@ -184,6 +204,7 @@
 
             </div>
         </div>
+
         <!-- End Who Can Apply -->
 
         <div class="text-center">
