@@ -16,30 +16,10 @@ import { AlertHostComponent } from "./pages/toastr/alert-host/alert-host.compone
   standalone: true,
   imports: [
     RouterModule,
-    FooterComponent,
-    TopNavComponent,
-    BottomNavComponent,
-    LoaderComponent,
-    CommonModule,
-    ApiLoaderComponent,
-    AlertHostComponent
-],
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
 export class AppComponent {
   title = 'tez.health';
-
-  isLoading$!: Observable<boolean>;
-  showAppLoader = true;
-
-  constructor(private loaderService: LoaderService) {
-  }
-
-  ngOnInit() {
-    this.isLoading$ = this.loaderService.isLoading$;
-    setTimeout(() => {
-      this.showAppLoader = false;
-    },2000)
-  }
 }

@@ -1036,6 +1036,29 @@ pre[class*="language-"].line-numbers {
   background: rgba(255,255,255,0.35);
 }
 
+/* Global rich text styles for innerHTML content */
+.rich-content ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  margin: 0.75rem 0;
+}
+
+.rich-content ol {
+  list-style-type: decimal;
+  padding-left: 1.5rem;
+  margin: 0.75rem 0;
+}
+
+.rich-content li {
+  margin-bottom: 0.5rem;
+}
+
+.rich-content h2,
+.rich-content h3 {
+  font-weight: 600;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
 
 
 
