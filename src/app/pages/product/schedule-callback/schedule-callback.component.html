@@ -27,7 +27,7 @@
             <button
                 class="border border-gray-300 bg-white rounded-lg py-1 font-semibold text-gray-700 text-center shadow-sm hover:bg-gray-100 transition">
                 <div class="flex flex-col items-center">
-                    <span class="text-base font-semibold">Schedule Callback</span>
+                    <span class="text-base font-semibold" (click)="showCallbackForm = true">Schedule Callback</span>
                     <span class="text-xs text-gray-500">Response Time : 2 hours</span>
                 </div>
             </button>
@@ -46,3 +46,14 @@
     </div>
 
 </div>
+
+<app-modal
+  [isOpen]="showCallbackForm"
+  (close)="showCallbackForm = false"
+  className="relative w-full max-w-[500px] mx-2 sm:mx-0 rounded-2xl bg-white">
+
+  <app-callback-form
+    (formSubmitted)="showCallbackForm = false;formSubmitted.emit()" [product]="product">
+  </app-callback-form>
+
+</app-modal>

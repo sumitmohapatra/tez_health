@@ -40,4 +40,11 @@ export class DataContextService {
     return this.http.get<any>(`${environment.baseUrl}tez/FetchPopularProducts`);
   }
 
+  getFormDetailsrecords(formDetails:any){
+    return this.http.post<any>(`${environment.baseUrl}tez/GetFormDetailsrecords`,formDetails);
+  }
+
+  scheduleCallback(formDetails:any){
+    return this.http.post<any>(`${environment.baseUrl}tez/BookingFormDetail`,formDetails);
+  }
 }

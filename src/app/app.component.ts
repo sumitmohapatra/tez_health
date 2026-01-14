@@ -9,6 +9,7 @@ import { CommonModule } from '@angular/common';
 import { LoaderService } from './services/loader.service';
 import { Observable } from 'rxjs';
 import { ApiLoaderComponent } from "./pages/home/api-loader/api-loader.component";
+import { AlertHostComponent } from "./pages/toastr/alert-host/alert-host.component";
 
 @Component({
   selector: 'app-root',
@@ -20,7 +21,8 @@ import { ApiLoaderComponent } from "./pages/home/api-loader/api-loader.component
     BottomNavComponent,
     LoaderComponent,
     CommonModule,
-    ApiLoaderComponent
+    ApiLoaderComponent,
+    AlertHostComponent
 ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',

@@ -48,7 +48,7 @@ export const routes: Routes = [
     title:'Sign Up Dashboard'
   },
   {
-    path:'home',
+    path:'',
     loadComponent: () =>
       import('./pages/home/home/home.component')
         .then(c => c.HomeComponent),

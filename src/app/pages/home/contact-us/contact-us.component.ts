@@ -1,6 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { DataContextService } from '../../../services/data-context.service';
+import { AlertService } from '../../../services/alert.service';
 
 @Component({
   selector: 'app-contact-us',
@@ -10,17 +12,16 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 })
 export class ContactUsComponent {
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, private dataContext: DataContextService, private alertService: AlertService) { }
 
   contactForm!: FormGroup;
 
   ngOnInit() {
     this.contactForm = this.fb.group({
-      firstName: ['', Validators.required],
-      lastName: ['', Validators.required],
+      name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      phone: ['', [Validators.required, Validators.pattern(/^[6-9]\d{9}$/)]],
-      details: ['', [Validators.required, Validators.minLength(10)]]
+      mobile: ['', [Validators.required, Validators.pattern(/^[6-9]\d{9}$/)]],
+      message: ['', [Validators.required, Validators.minLength(10)]]
     });
   }
 
@@ -35,7 +36,16 @@ export class ContactUsComponent {
       return;
     }
 
-    console.log(this.contactForm.value);
-    // API call here
+    const payload = {
+      ...this.contactForm.value,
+      formtype: 2,
+    };
+
+    this.dataContext.getFormDetailsrecords(payload).subscribe(response => {
+      this.alertService.showSuccess('Form submitted successfully!');
+      this.contactForm.reset();
+    }, error => {
+      this.alertService.showError('Failed to submit the form');
+    })
   }
 }

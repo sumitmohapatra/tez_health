@@ -18,9 +18,9 @@
 
         <!-- Phone -->
         <div>
-            <input type="text" formControlName="phone" placeholder="Phone Number" class="w-full rounded-lg border px-4 py-3 text-sm
+            <input type="text" formControlName="mobile" placeholder="Phone Number" class="w-full rounded-lg border px-4 py-3 text-sm
                focus:ring-2 focus:ring-tezblue focus:outline-none" />
-            <p *ngIf="(submitted || f['phone'].touched) && f['phone'].errors" class="text-red-500 text-xs mt-1">
+            <p *ngIf="(submitted || f['mobile'].touched) && f['mobile'].errors" class="text-red-500 text-xs mt-1">
                 Enter a valid 10-digit mobile number
             </p>
 
@@ -28,13 +28,13 @@
 
         <!-- Role Dropdown -->
         <div>
-            <select formControlName="role" class="w-full rounded-lg border px-4 py-3 text-sm
+            <select formControlName="profession" class="w-full rounded-lg border px-4 py-3 text-sm
                focus:ring-2 focus:ring-tezblue focus:outline-none">
                 <option value="">Select Role</option>
                 <option value="Nurse">Nurse</option>
                 <option value="Doctor">Doctor</option>
             </select>
-            <p *ngIf="submitted && f['role'].errors" class="text-red-500 text-xs mt-1">
+            <p *ngIf="submitted && f['profession'].errors" class="text-red-500 text-xs mt-1">
                 Please select a role
             </p>
         </div>

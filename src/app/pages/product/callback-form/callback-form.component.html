@@ -1,0 +1,66 @@
+<div class="p-6">
+
+    <h3 class="text-xl font-semibold text-gray-900 mb-4 text-center">
+        Call Back Form
+    </h3>
+
+    <form [formGroup]="callbackForm" (ngSubmit)="submit()" class="space-y-4">
+
+        <!-- Name -->
+        <div>
+            <input type="text" formControlName="name" placeholder="Full Name"
+                class="w-full rounded-lg border px-4 py-3 text-sm focus:ring-2 focus:ring-tezblue focus:outline-none" />
+            <p *ngIf="submitted && f['name'].errors" class="text-red-500 text-xs mt-1">
+                Name is required
+            </p>
+        </div>
+
+        <!-- Location -->
+        <div>
+            <input type="text" formControlName="location" placeholder="City / Location"
+                class="w-full rounded-lg border px-4 py-3 text-sm focus:ring-2 focus:ring-tezblue focus:outline-none" />
+            <p *ngIf="submitted && f['location'].errors" class="text-red-500 text-xs mt-1">
+                Location is required
+            </p>
+        </div>
+
+        <!-- Mobile -->
+        <div>
+            <input type="text" formControlName="mobile" placeholder="Mobile Number"
+                class="w-full rounded-lg border px-4 py-3 text-sm focus:ring-2 focus:ring-tezblue focus:outline-none" />
+            <p *ngIf="submitted && f['mobile'].errors" class="text-red-500 text-xs mt-1">
+                Enter a valid 10-digit mobile number
+            </p>
+        </div>
+
+        <!-- Date -->
+        <div>
+            <input #dateInput type="date" formControlName="Service_required_on" [min]="minDate"
+                (click)="dateInput.showPicker()" class="w-full rounded-lg border px-4 py-3 text-sm cursor-pointer
+           focus:ring-2 focus:ring-tezblue focus:outline-none" />
+
+            <p *ngIf="submitted && f['Service_required_on'].errors" class="text-red-500 text-xs mt-1">
+                Please select a date
+            </p>
+        </div>
+
+
+
+
+        <!-- Service -->
+        <div>
+            <input type="text" formControlName="serviceName" [disabled]="true" class="w-full rounded-lg border bg-gray-100 px-4 py-3 text-sm text-gray-700
+           cursor-not-allowed focus:outline-none" />
+
+            <!-- No validation message needed since it's auto-filled -->
+        </div>
+
+
+        <!-- Submit -->
+        <button type="submit" [disabled]="isSubmitting"
+            class="w-full rounded-lg bg-tezblue py-3 text-white font-semibold hover:bg-tezblue/90 transition disabled:opacity-60">
+            {{ isSubmitting ? 'Submitting…' : 'Request Callback' }}
+        </button>
+
+    </form>
+</div>

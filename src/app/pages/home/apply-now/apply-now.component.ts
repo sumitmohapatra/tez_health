@@ -1,6 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
+import { DataContextService } from '../../../services/data-context.service';
+import { AlertService } from '../../../services/alert.service';
 
 @Component({
   selector: 'app-apply-now',
@@ -15,16 +17,16 @@ export class ApplyNowComponent {
   isSubmitting = false;
   @Output() formSubmitted = new EventEmitter<void>();
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder, private dataContext: DataContextService, private alertService: AlertService) { }
 
   ngOnInit() {
     this.applyForm = this.fb.group({
       name: ['', [Validators.required, Validators.minLength(2)]],
-      phone: ['', [
+      mobile: ['', [
         Validators.required,
         Validators.pattern(/^[6-9]\d{9}$/)
       ]],
-      role: ['', Validators.required],
+      profession: ['', Validators.required],
       location: ['', Validators.required]
     });
   }
@@ -38,18 +40,19 @@ export class ApplyNowComponent {
 
     const payload = {
       ...this.applyForm.value,
-      source: 'Tez Health Careers',
-      createdAt: new Date()
+      formtype: 1,
     };
 
-    console.log('Application submitted:', payload);
-
-    setTimeout(() => {
+    this.dataContext.getFormDetailsrecords(payload).subscribe(response => {
       this.isSubmitting = false;
       this.formSubmitted.emit();
       this.applyForm.reset();
       this.submitted = false;
-    }, 1200);
+      this.alertService.showSuccess('Form submitted successfully!');
+    }, error => {
+      this.isSubmitting = false;
+      this.alertService.showError('Failed to submit the form');
+    })
   }
 
   get f() {
