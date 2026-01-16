@@ -47,7 +47,7 @@ export class SearchBoxComponent {
 
   goToDetails(service: SearchApiResponse) {
     this.router.navigate(
-      ['/product-details', service.productId]
+      ['/product-details', service.productId, service.categoryId]
     );
     this.showResults = false;
   }

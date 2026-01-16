@@ -1,15 +1,15 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { GridShapeComponent } from "../../../shared/components/common/grid-shape/grid-shape.component";
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-count-down',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './count-down.component.html',
   styleUrl: './count-down.component.css'
 })
 export class CountDownComponent {
-   value = 10;
+   value = 20;
   private timer?: number;
 
   constructor(private router: Router) {}
@@ -21,7 +21,7 @@ export class CountDownComponent {
       if (this.value <= 0) {
         this.clearTimer();
 
-        this.router.navigate(['']);
+        // this.router.navigate(['']);
       }
     }, 1000);
   }

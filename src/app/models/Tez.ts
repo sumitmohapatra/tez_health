@@ -28,4 +28,5 @@ export interface Product {
 export interface SearchApiResponse{
   name:string;
   productId:string;
+  categoryId:string;
 }

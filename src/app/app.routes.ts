@@ -92,7 +92,7 @@ export const routes: Routes = [
         loadComponent: () =>
           import('./pages/home/about-us/about-us.component')
             .then(c => c.AboutUsComponent),
-        title: 'Home | tez.health'
+        title: 'About us | tez.health'
       },
       {
         path: 'partner',
@@ -106,14 +106,14 @@ export const routes: Routes = [
         loadComponent: () =>
           import('./pages/home/join-us/join-us.component')
             .then(c => c.JoinUsComponent),
-        title: 'Partner | tez.health'
+        title: 'Join us | tez.health'
       },
       {
         path: 'refund-cancellation-policy',
         loadComponent: () =>
           import('./pages/home/refund-cancellation-policy/refund-cancellation-policy.component')
             .then(c => c.RefundCancellationPolicyComponent),
-        title: 'Partner | tez.health'
+        title: 'Refund Cancellation Policy | tez.health'
       },
       {
         path: 'contact',
