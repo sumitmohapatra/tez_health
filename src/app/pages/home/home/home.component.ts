@@ -12,6 +12,7 @@ import { SearchBoxComponent } from "../search-box/search-box.component";
 import { Router } from '@angular/router';
 import { HowItWorksComponent } from "../how-it-works/how-it-works.component";
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-home',
@@ -20,7 +21,8 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 })
 export class HomeComponent {
 
-constructor(private breakpointObserver: BreakpointObserver) {}
+constructor(private breakpointObserver: BreakpointObserver,private title: Title,
+    private meta: Meta) {}
 
 limit = 5;
 
@@ -28,5 +30,15 @@ ngOnInit() {
   this.breakpointObserver.observe([Breakpoints.Handset]).subscribe(result => {
     this.limit = result.matches ? 6 : 5;
   });
+
+   this.title.setTitle(
+      'Tez Health | Hospital-Grade Healthcare at Home in Minutes'
+    );
+
+    this.meta.updateTag({
+      name: 'description',
+      content:
+        'Get hospital-grade healthcare at home in minutes. Book expert nurses, injections, IV therapy, diagnostics, doctor visits & ambulances with Tez Health.'
+    });
 }
 }
